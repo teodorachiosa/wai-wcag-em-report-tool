@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+:root {
+  color-scheme: dark; /* light or dark */
+  --base-color: #B79EF0; /* preferred color */
+
+/* ====== Rest of the code: ========= */
+  --mix-color: light-dark(white, rgb(5,5,5));
+  --pure-white: light-dark(white, black);
+  --off-white: light-dark(rgb(230,230,230), rgb(10,10,10));
+  --dk-grey: light-dark(rgb(10,10,10), rgb(200,200,200));
+  --bg: color-mix(in hsl, var(--base-color), var(--mix-color) 100%);
+  --body-bg: var(--bg);
+  --font-family: "Inclusive Sans", sans-serif;
+  --font-family-code: "Fira Code", monospace;
+  --w3c-classic: var(--base-color);
+  --wai-green: var(--base-color);
+  --w3c-blue: color-mix(in hsl, var(--base-color), var(--mix-color) 20%);
+  
+  --cloudy: light-dark(rgb(200,200,200), rgb(50,50,50));
+  --cloudy-subtle: light-dark(rgb(230,230,230), rgb(20,20,20));
+  --gold: light-dark(white, black);
+  --visited-link: light-dark(black, white);
+  --ocean: light-dark(black, white);
+  --footer-grey: light-dark(rgb(240,240,240), rgb(15,15,15));
+  --line-grey: light-dark(rgb(230,230,230), rgb(20,20,20));
+  --off-black: light-dark(rgb(0,0,0), rgb(190,190,190));
+  --dk-blue: light-dark(rgb(0,0,0), rgb(190,190,190));
+  --info-box: color-mix(in hsl, var(--base-color), var(--mix-color) 92%);
+  accent-color: var(--base-color);
+}
+
+* {
+  transition: all .1s ease;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family) !important;
+}
+
+button {
+  font-family: var(--font-family) !important;
+}
+
+input, textarea, select {
+  font-family: var(--font-family);
+  border-width: 2px !important;
+  padding: 0.4rem  0.5rem  !important;
+  border-radius: 4px  !important;
+  margin-top: 0.3rem  !important;
+}
+
+code, pre {
+  font-family: var(--font-family-code) !important;
+}
+
+.app-container {
+  background: var(--bg) !important;
+}
+.HelpText__body, .Fieldset__helptext, .SampleInput__helptext {
+  background: var(--info-box) !important;
+  border: none !important;
+  border-radius: 4px !important;
+}
+.tool-header {
+  padding: 1rem !important;
+}
+.tool-header-logo {
+  display: none !important;
+}
+.nav__item a:hover {
+  background: var(--cloudy) !important;
+  text-decoration-color: var(--base-color) !important;
+}
+.LanguageSelect__language {
+  &::before {
+    content: none !important;
+  }
+  margin: 0 0.2rem !important;
+}
+.nav__item a:hover {
+  background: var(--cloudy) !important;
+}
+.nav__item.current {
+  background-color: var(--bg) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 6px !important;
+  text-decoration-thickness: 2px !important;
+}
+.field:focus-within {
+  background-color: transparent !important;
+}
+.Field > *:not(:last-child) {
+  margin-bottom: 0 !important;
+}
+.Auditor__ResultsTableHeader {
+  z-index: 3 !important;
+}
