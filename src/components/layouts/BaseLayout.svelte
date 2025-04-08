@@ -12,16 +12,26 @@
       <div class="tool-header-logo">
         <a href="http://w3.org/"><img
             alt="W3C"
-            src={`${$basepath}/images/w3c.svg`}
+            src="{`${$basepath}/images/w3c.svg`}"
             width="50"
             height="24"
           /></a>
         <a href="http://w3.org/WAI/"><img
             alt="Web Accessibility Initiative"
-            src={`${$basepath}/images/wai.svg`}
+            src="{`${$basepath}/images/wai.svg`}"
             width="90"
             height="24"
           /></a>
+      </div>
+      <div class="tool-header-color-options">
+        <div class="base-color-control">
+          <label for="base-color">Base color</label>
+          <input type="color" id="base-color" value="{defaultColor}" on:input={onColorChange} />
+        </div>
+        <div class="dark-mode-control">
+          <label for="dark-mode">Dark mode</label>
+          <input type="checkbox" id="dark-mode" checked="true" on:change={onDarkModeToggle}/>
+        </div>
       </div>
     </div>
   </div>
@@ -32,7 +42,7 @@
 <slot />
 
 {#if !isAcknowledgements}
-<Pager label="{TRANSLATED.STEP}" context="{pagerContext}" />
+  <Pager label="{TRANSLATED.STEP}" context="{pagerContext}" />
 {/if}
 
 <!-- /@Layout -->
@@ -43,6 +53,23 @@
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+  }
+  .tool-header-color-options {
+    display: flex;
+    gap: 1rem;
+  }
+  .base-color-control, .dark-mode-control {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .base-color-control input {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .dark-mode-control input {
+    margin: 0 !important;
   }
   .BaseLayout {
     padding: 2em 1em;
@@ -73,13 +100,25 @@
   const { translate } = getContext('app');
   const location = useLocation();
 
+  const defaultColor = '#B79EF0';
+
   $: TRANSLATED = {
-    STEP: $translate('UI.NAV.STEP', { default: 'step' }),
+    STEP: $translate('UI.NAV.STEP', { default: 'step' })
   };
 
   $: isAcknowledgements = $location.pathname === $routes.ACKNOWLEDGEMENTS.path;
 
   $: pagerContext = Object.keys($routes).map((key) => {
     return $routes[key];
-  });  
+  });
+
+  function onColorChange(event) {
+    const color = event.target.value;
+    document.documentElement.style.setProperty('--base-color', color);
+  }
+
+  function onDarkModeToggle(event) {
+    const isChecked = event.target.checked;
+    document.documentElement.style.setProperty('color-scheme', isChecked ? 'dark' : 'light');
+  }
 </script>
