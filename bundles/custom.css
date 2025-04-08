@@ -80,7 +80,8 @@ code, pre {
   }
   margin: 0 0.2rem !important;
 }
-.nav__item a:hover {
+.nav__item a:hover,
+.nav__item a:focus {
   background: var(--cloudy) !important;
 }
 .nav__item.current {
