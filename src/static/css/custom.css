@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 
 :root {
-  color-scheme: dark; /* light or dark */
-  --base-color: #B79EF0; /* preferred color */
+  color-scheme: light; /* light or dark */
+  --base-color: #4c3ed7; /* preferred color */
 
 /* ====== Rest of the code: ========= */
   --mix-color: light-dark(white, rgb(5,5,5));
