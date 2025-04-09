@@ -30,7 +30,7 @@
         </div>
         <div class="dark-mode-control">
           <label for="dark-mode">Dark mode</label>
-          <input type="checkbox" id="dark-mode" checked="true" on:change={onDarkModeToggle}/>
+          <input type="checkbox" id="dark-mode" checked="false" on:change={onDarkModeToggle}/>
         </div>
       </div>
     </div>
@@ -100,7 +100,7 @@
   const { translate } = getContext('app');
   const location = useLocation();
 
-  const defaultColor = '#B79EF0';
+  const defaultColor = '#4c3ed7';
 
   $: TRANSLATED = {
     STEP: $translate('UI.NAV.STEP', { default: 'step' })
