@@ -21,7 +21,7 @@
   --cloudy: light-dark(rgb(200,200,200), rgb(50,50,50));
   --cloudy-subtle: light-dark(rgb(230,230,230), rgb(20,20,20));
   --gold: light-dark(white, black);
-  --visited-link: light-dark(black, white);
+  --visited-link: var(--w3c-blue);
   --ocean: light-dark(black, white);
   --footer-grey: light-dark(rgb(240,240,240), rgb(15,15,15));
   --line-grey: light-dark(rgb(230,230,230), rgb(20,20,20));
