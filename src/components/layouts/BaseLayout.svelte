@@ -30,7 +30,7 @@
         </div>
         <div class="dark-mode-control">
           <label for="dark-mode">Dark mode</label>
-          <input type="checkbox" id="dark-mode" checked="false" on:change={onDarkModeToggle}/>
+          <input type="checkbox" id="dark-mode" on:change={onDarkModeToggle}/>
         </div>
       </div>
     </div>
