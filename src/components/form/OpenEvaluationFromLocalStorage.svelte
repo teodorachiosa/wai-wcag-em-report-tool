@@ -1,6 +1,6 @@
 {#if hasLocalStorageContent}
   <Button type="secondary" on:click="{handleOpenFromLocalStorageChange}">
-    {TRANSLATED.BUTTON}
+    ✨ {TRANSLATED.BUTTON}
   </Button>
 {/if}
 
