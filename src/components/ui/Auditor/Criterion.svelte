@@ -75,7 +75,7 @@
   />
 
   {#if $allSamples.length > 0 && $auditSamples.length > 0}
-  <details>
+  <details open>
     <summary><h4>{TRANSLATED.SAMPLE_RESULTS_DETAILS_BUTTON}</h4></summary>
     <!--
      * Sample results should be generated from
