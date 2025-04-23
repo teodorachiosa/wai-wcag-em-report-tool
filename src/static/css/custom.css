@@ -145,5 +145,5 @@ h6 {
 }
 
 .Auditor__Assertion h6::before {
-  content: '📄 ' !important;
+  content: '📄 ';
 }
