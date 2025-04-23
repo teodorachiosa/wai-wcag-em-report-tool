@@ -9,5 +9,5 @@ Live demo: [teodorachiosa.github.io/wai-wcag-em-report-tool](https://teodorachio
 - The report is saved to local storage on input changes
 - The report can be opened from local storage by using the button titled "Open from local storage" in the Overview step
 - The criteria in the audit is sticky (sticks to the top of the screen)
-- The sample pages are sticky (they stick to the top of the page)
+- The sample pages in the auditor are sticky (they stick to the top of the page)
 - The details for sample pages are open by default
