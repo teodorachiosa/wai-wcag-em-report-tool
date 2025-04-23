@@ -5,34 +5,34 @@
   color-scheme: light; /* light or dark */
   --base-color: #4c3ed7; /* preferred color */
 
-/* ====== Rest of the code: ========= */
-  --mix-color: light-dark(white, rgb(5,5,5));
+  /* ====== Rest of the code: ========= */
+  --mix-color: light-dark(white, rgb(5, 5, 5));
   --pure-white: light-dark(white, black);
-  --off-white: light-dark(rgb(230,230,230), rgb(10,10,10));
-  --dk-grey: light-dark(rgb(10,10,10), rgb(200,200,200));
+  --off-white: light-dark(rgb(230, 230, 230), rgb(10, 10, 10));
+  --dk-grey: light-dark(rgb(10, 10, 10), rgb(200, 200, 200));
   --bg: color-mix(in hsl, var(--base-color), var(--mix-color) 100%);
   --body-bg: var(--bg);
-  --font-family: "Inclusive Sans", sans-serif;
-  --font-family-code: "Fira Code", monospace;
+  --font-family: 'Inclusive Sans', sans-serif;
+  --font-family-code: 'Fira Code', monospace;
   --w3c-classic: var(--base-color);
   --wai-green: var(--base-color);
   --w3c-blue: color-mix(in hsl, var(--base-color), var(--mix-color) 20%);
-  
-  --cloudy: light-dark(rgb(200,200,200), rgb(50,50,50));
-  --cloudy-subtle: light-dark(rgb(230,230,230), rgb(20,20,20));
+
+  --cloudy: light-dark(rgb(200, 200, 200), rgb(50, 50, 50));
+  --cloudy-subtle: light-dark(rgb(230, 230, 230), rgb(20, 20, 20));
   --gold: light-dark(white, black);
   --visited-link: var(--w3c-blue);
   --ocean: light-dark(black, white);
-  --footer-grey: light-dark(rgb(240,240,240), rgb(15,15,15));
-  --line-grey: light-dark(rgb(230,230,230), rgb(20,20,20));
-  --off-black: light-dark(rgb(0,0,0), rgb(190,190,190));
-  --dk-blue: light-dark(rgb(0,0,0), rgb(190,190,190));
+  --footer-grey: light-dark(rgb(240, 240, 240), rgb(15, 15, 15));
+  --line-grey: light-dark(rgb(230, 230, 230), rgb(20, 20, 20));
+  --off-black: light-dark(rgb(0, 0, 0), rgb(190, 190, 190));
+  --dk-blue: light-dark(rgb(0, 0, 0), rgb(190, 190, 190));
   --info-box: color-mix(in hsl, var(--base-color), var(--mix-color) 92%);
   accent-color: var(--base-color);
 }
 
 * {
-  transition: all .1s ease;
+  transition: all 0.1s ease;
   box-sizing: border-box;
 }
 
@@ -44,22 +44,27 @@ button {
   font-family: var(--font-family) !important;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
   font-family: var(--font-family);
   border-width: 2px !important;
-  padding: 0.4rem  0.5rem  !important;
-  border-radius: 4px  !important;
-  margin-top: 0.3rem  !important;
+  padding: 0.4rem 0.5rem !important;
+  border-radius: 4px !important;
+  margin-top: 0.3rem !important;
 }
 
-code, pre {
+code,
+pre {
   font-family: var(--font-family-code) !important;
 }
 
 .app-container {
   background: var(--bg) !important;
 }
-.HelpText__body, .Fieldset__helptext, .SampleInput__helptext {
+.HelpText__body,
+.Fieldset__helptext,
+.SampleInput__helptext {
   background: var(--info-box) !important;
   border: none !important;
   border-radius: 4px !important;
@@ -99,10 +104,38 @@ code, pre {
 .Auditor__ResultsTableHeader {
   z-index: 3 !important;
 }
-.Auditor__Assertion .criterion-header {
-  position: sticky;
-  top: 0;
-  border-bottom: 1px solid var(--cloudy);
-  background-color: var(--pure-white);
-  box-shadow: 0 0 0.2rem 0.2rem var(--pure-white);
+
+@media (min-width: 60rem) {
+  .Auditor {
+    display: grid;
+    grid-template-columns:
+      [left-start] minmax(auto, 12.5em)
+      [left-end content-start] 1.25fr
+      [content-end];
+    grid-gap: 32px;
+  }
+
+  .Auditor__Assertion .criterion {
+    padding-top: 0.4rem !important;
+  }
+
+  .Auditor__Assertion .criterion-header {
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid var(--cloudy);
+    background-color: var(--pure-white);
+    box-shadow: 0 0 0.2rem 0.2rem var(--pure-white);
+    padding-top: 0.4rem !important;
+  }
+
+  .Auditor__Filter {
+    position: sticky;
+    top: 0;
+    align-self: start;
+    padding-top: 0.4rem;
+    overflow-y: auto;
+    height: 100vh;
+    padding-right: 0.6rem;
+  }
 }
+
