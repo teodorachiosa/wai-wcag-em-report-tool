@@ -99,3 +99,10 @@ code, pre {
 .Auditor__ResultsTableHeader {
   z-index: 3 !important;
 }
+.Auditor__Assertion .criterion-header {
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid var(--cloudy);
+  background-color: var(--pure-white);
+  box-shadow: 0 0 0.2rem 0.2rem var(--pure-white);
+}
