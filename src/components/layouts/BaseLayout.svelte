@@ -26,11 +26,21 @@
       <div class="tool-header-color-options">
         <div class="base-color-control">
           <label for="base-color">Base color</label>
-          <input type="color" id="base-color" value="{defaultColor}" on:input={onColorChange} />
+          <input
+            type="color"
+            id="base-color"
+            value="{defaultColor}"
+            on:input="{onColorChange}"
+          />
         </div>
         <div class="dark-mode-control">
           <label for="dark-mode">Dark mode</label>
-          <input type="checkbox" id="dark-mode" on:change={onDarkModeToggle}/>
+          <input
+            type="checkbox"
+            checked="{defaultMode}"
+            id="dark-mode"
+            on:change="{onDarkModeToggle}"
+          />
         </div>
       </div>
     </div>
@@ -59,7 +69,8 @@
     display: flex;
     gap: 1rem;
   }
-  .base-color-control, .dark-mode-control {
+  .base-color-control,
+  .dark-mode-control {
     display: flex;
     align-items: center;
     gap: 0.3rem;
@@ -100,7 +111,8 @@
   const { translate } = getContext('app');
   const location = useLocation();
 
-  const defaultColor = '#4c3ed7';
+  const defaultColor = initializeColor();
+  const defaultMode = initializeDarkMode();
 
   $: TRANSLATED = {
     STEP: $translate('UI.NAV.STEP', { default: 'step' })
@@ -112,13 +124,54 @@
     return $routes[key];
   });
 
+  function initializeColor() {
+    const savedColorCookie = getCookie('baseColor');
+    const defaultColor = savedColorCookie ?? '#4c3ed7';
+
+    if (savedColorCookie) {
+      document.documentElement.style.setProperty('--base-color', savedColorCookie);
+    }
+
+    return defaultColor;
+  }
+
+  function initializeDarkMode() {
+    const savedModeCookie = getCookie('darkMode');
+    const defaultDarkMode = savedModeCookie === 'true';
+
+    document.documentElement.style.setProperty(
+      'color-scheme',
+      defaultDarkMode ? 'dark' : 'light'
+    );
+
+    return defaultDarkMode;
+  }
+
   function onColorChange(event) {
     const color = event.target.value;
     document.documentElement.style.setProperty('--base-color', color);
+    setCookie('baseColor', color);
   }
 
   function onDarkModeToggle(event) {
     const isChecked = event.target.checked;
-    document.documentElement.style.setProperty('color-scheme', isChecked ? 'dark' : 'light');
+    document.documentElement.style.setProperty(
+      'color-scheme',
+      isChecked ? 'dark' : 'light'
+    );
+    setCookie('darkMode', isChecked ? 'true' : 'false');
+  }
+
+  function setCookie(name, value) {
+    const expires = new Date(
+      Date.now() + 365 * 24 * 60 * 60 * 1000
+    ).toUTCString();
+    document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+  }
+
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
   }
 </script>
