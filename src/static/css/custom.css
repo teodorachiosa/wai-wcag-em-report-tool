@@ -3,7 +3,7 @@
 
 :root {
   color-scheme: light; /* light or dark */
-  --base-color: #4c3ed7; /* preferred color */
+  --base-color: #011265; /* preferred color */
 
   /* ====== Rest of the code: ========= */
   --mix-color: light-dark(white, rgb(5, 5, 5));
@@ -37,72 +37,72 @@
 }
 
 body {
-  font-family: var(--font-family) !important;
+  font-family: var(--font-family);
 }
 
 button {
-  font-family: var(--font-family) !important;
+  font-family: var(--font-family);
 }
 
 input,
 textarea,
 select {
   font-family: var(--font-family);
-  border-width: 2px !important;
-  padding: 0.4rem 0.5rem !important;
-  border-radius: 4px !important;
-  margin-top: 0.3rem !important;
+  border-width: 2px;
+  padding: 0.4rem 0.5rem;
+  border-radius: 4px;
+  margin-top: 0.3rem;
 }
 
 code,
 pre {
-  font-family: var(--font-family-code) !important;
+  font-family: var(--font-family-code);
 }
 
 .app-container {
-  background: var(--bg) !important;
+  background: var(--bg);
 }
 .HelpText__body,
 .Fieldset__helptext,
 .SampleInput__helptext {
-  background: var(--info-box) !important;
-  border: none !important;
-  border-radius: 4px !important;
+  background: var(--info-box);
+  border: none;
+  border-radius: 4px;
 }
 .tool-header {
-  padding: 1rem !important;
+  padding: 1rem;
 }
 .tool-header-logo {
-  display: none !important;
+  display: none;
 }
 .nav__item a:hover {
-  background: var(--cloudy) !important;
-  text-decoration-color: var(--base-color) !important;
+  background: var(--cloudy);
+  text-decoration-color: var(--base-color);
 }
 .LanguageSelect__language {
   &::before {
-    content: none !important;
+    content: none;
   }
-  margin: 0 0.2rem !important;
+  margin: 0 0.2rem;
 }
 .nav__item a:hover,
 .nav__item a:focus {
-  background: var(--cloudy) !important;
+  background: var(--cloudy);
 }
 .nav__item.current {
-  background-color: var(--bg) !important;
-  text-decoration: underline !important;
-  text-underline-offset: 6px !important;
-  text-decoration-thickness: 2px !important;
+  background-color: var(--bg);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
 }
 .field:focus-within {
-  background-color: transparent !important;
+  background-color: transparent;
 }
 .Field > *:not(:last-child) {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
 }
 .Auditor__ResultsTableHeader {
-  z-index: 3 !important;
+  z-index: 3;
 }
 
 @media (min-width: 60rem) {
@@ -116,7 +116,7 @@ pre {
   }
 
   .Auditor__Assertion .criterion {
-    padding-top: 0.4rem !important;
+    padding-top: 0.4rem;
   }
 
   .Auditor__Assertion .criterion-header {
@@ -125,7 +125,7 @@ pre {
     border-bottom: 1px solid var(--cloudy);
     background-color: var(--pure-white);
     box-shadow: 0 0 0.2rem 0.2rem var(--pure-white);
-    padding-top: 0.4rem !important;
+    padding-top: 0.4rem;
   }
 
   .Auditor__Filter {
@@ -146,4 +146,14 @@ h6 {
 
 .Auditor__Assertion h6::before {
   content: '📄 ';
+}
+
+th a:focus,
+th a:hover {
+  color: var(--base-color);
+}
+
+th a,
+th a:visited {
+  color: var(--visited-link);
 }

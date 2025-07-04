@@ -19,7 +19,12 @@
         * -->
         {#each guidelineCriteria(guideline) as criterion (criterion.num)}
           <tr class="Auditor__Assertion">
-            <th scope="row" class="Auditor__Assertion-SC" id={`criterion-${criterion.num.replaceAll('.', '')}`}>{criterion.num}: {TRANSLATED.CRITERIA[criterion.num].TITLE}</th>
+            <th scope="row" class="Auditor__Assertion-SC" id={`criterion-${criterion.num.replaceAll('.', '')}`}>
+              {#if wcagVersion == '20'}
+                <a target="_blank" href="https://www.w3.org/TR/UNDERSTANDING-WCAG{wcagVersion}/{criterion.id}.html">{criterion.num}: {TRANSLATED.CRITERIA[criterion.num].TITLE}</a>
+              {:else}
+                <a target="_blank" href="https://www.w3.org/WAI/WCAG{wcagVersion}/Understanding/{criterion.id}.html">{criterion.num}: {TRANSLATED.CRITERIA[criterion.num].TITLE}</a>
+              {/if}
             <td>
                 {#each scopeAssertion(criterion) as assertion}
                   {#if sampleAssertions(criterion).length}
@@ -190,6 +195,8 @@
     NO_OBSERVATIONS_FOUND: $translate('PAGES.REPORT.NO_OBSERVATIONS_FOUND'),
     EDIT: $translate('UI.REPORT.EDIT')
   };
+
+  $: wcagVersion = $scopeStore['WCAG_VERSION'].replace(".", "");
 
   // Sets are unique values
   $: principles = [...new Set(criteria.map((a) => a.num.split('.')[0]))];

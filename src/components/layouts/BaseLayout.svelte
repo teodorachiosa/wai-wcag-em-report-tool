@@ -126,7 +126,7 @@
 
   function initializeColor() {
     const savedColorCookie = getCookie('baseColor');
-    const defaultColor = savedColorCookie ?? '#4c3ed7';
+    const defaultColor = savedColorCookie ?? '#011265';
 
     if (savedColorCookie) {
       document.documentElement.style.setProperty('--base-color', savedColorCookie);

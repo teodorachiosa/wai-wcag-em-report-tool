@@ -1,0 +1,9 @@
+@layer w3c-style, global, main, custom;
+
+/* WAI Website Components: https://wai-website-theme.netlify.app/components/ */
+@import 'https://www.w3.org/WAI/assets/css/style.css?157322067556071300'
+  layer(w3c-style);
+
+@import 'global.css' layer(global);
+@import 'main.css' layer(main);
+@import 'custom.css' layer(custom);
