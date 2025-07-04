@@ -11,3 +11,5 @@ Live demo: [teodorachiosa.github.io/wai-wcag-em-report-tool](https://teodorachio
 - The criteria in the audit is sticky (sticks to the top of the screen)
 - The sample pages in the auditor are sticky (they stick to the top of the page)
 - The details for sample pages are open by default
+- In the exported HTML report, the success criteria in the table headers are links to the W3 success criteria
+- The styles are refactored to use [layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) for easier customization
