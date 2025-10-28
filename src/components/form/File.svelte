@@ -22,9 +22,12 @@
 <style>
   div { display: inline-block; }
   :focus + .File__label {
-    color: #fff;
-    background-color: #036;
-    border-color: #036;
+    color: var(--pure-white);
+    background-color: var(--w3c-blue);
+    border-color: var(--w3c-blue);
+    outline-offset: 2px;
+    outline: 2px solid;
+    outline-color: var(--w3c-blue);
   }
 
   .File__label {
