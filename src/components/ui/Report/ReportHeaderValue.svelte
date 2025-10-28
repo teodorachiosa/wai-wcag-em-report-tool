@@ -28,13 +28,13 @@
     margin-bottom: 1em;
   }
 
-  /* :global(*:first-child) {
+  :global(.report-heading-scope dd *:first-child) {
     margin-top: 0;
   }
 
-  :global(*:last-child) {
+  :global(.report-heading-scope dd *:last-child) {
     margin-bottom: 0;
-  } */
+  }
 </style>
 
 <script>

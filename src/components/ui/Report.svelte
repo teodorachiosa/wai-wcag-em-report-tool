@@ -94,7 +94,7 @@
 
 <div tabindex="-1" bind:this="{sectionEvaluationScope}">
   <h2>{TRANSLATED.HEADING_SCOPE}</h2>
-  <dl>
+  <dl class="report-heading-scope">
     <dt>
       <ReportHeaderKey editing="{editEvaluationScope}" field="SITE_NAME">
         {TRANSLATED.LABEL_WEBSITE_NAME}
