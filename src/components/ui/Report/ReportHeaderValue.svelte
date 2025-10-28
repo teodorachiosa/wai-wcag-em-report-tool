@@ -12,7 +12,7 @@
   {/if}
 {:else}
   {#if storeToUse[field]}
-    {storeToUse[field]}
+    {@html marked(storeToUse[field], { sanitize: true })}
   {:else}
     <span class="no-result">{TRANSLATED.LABEL_NOT_PROVIDED}</span>
   {/if}
@@ -27,10 +27,20 @@
   textarea {
     margin-bottom: 1em;
   }
+
+  :global(*:first-child) {
+    margin-top: 0;
+  }
+
+  :global(*:last-child) {
+    margin-bottom: 0;
+  }
 </style>
 
 <script>
   import { getContext } from 'svelte';
+  import marked from 'marked';
+
   const { scopeStore, summaryStore, translate } = getContext('app');  
   
   export let field;

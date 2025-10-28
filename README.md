@@ -13,3 +13,4 @@ Live demo: [teodorachiosa.github.io/wai-wcag-em-report-tool](https://teodorachio
 - The details for sample pages are open by default
 - In the exported HTML report, the success criteria in the table headers are links to the W3 success criteria
 - The styles are refactored to use [layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) for easier customization
+- Added markdown support in report header fields
