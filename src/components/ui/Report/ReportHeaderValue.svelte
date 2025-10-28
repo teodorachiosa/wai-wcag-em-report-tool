@@ -28,13 +28,13 @@
     margin-bottom: 1em;
   }
 
-  :global(*:first-child) {
+  /* :global(*:first-child) {
     margin-top: 0;
   }
 
   :global(*:last-child) {
     margin-bottom: 0;
-  }
+  } */
 </style>
 
 <script>
