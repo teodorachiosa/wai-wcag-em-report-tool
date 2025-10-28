@@ -1,21 +1,20 @@
 {#if editing}
   {#if multiline}
     <textarea
-    bind:value={storeToUse[field]}
-    id={`evaluation-meta-edit-${field}`}
+      bind:value="{storeToUse[field]}"
+      id="{`evaluation-meta-edit-${field}`}"
     ></textarea>
   {:else}
-  <input
-    type="text"
-    bind:value={storeToUse[field]}
-    id={`evaluation-meta-edit-${field}`} />
+    <input
+      type="text"
+      bind:value="{storeToUse[field]}"
+      id="{`evaluation-meta-edit-${field}`}"
+    />
   {/if}
 {:else}
   {#if storeToUse[field]}
     {@html marked(storeToUse[field], { sanitize: true })}
-  {:else}
-    <span class="no-result">{TRANSLATED.LABEL_NOT_PROVIDED}</span>
-  {/if}
+  {:else}<span class="no-result">{TRANSLATED.LABEL_NOT_PROVIDED}</span>{/if}
 {/if}
 
 <style>
@@ -26,6 +25,14 @@
   }
   textarea {
     margin-bottom: 1em;
+  }
+
+  :global(.report-heading-about dd *:first-child) {
+    margin-top: 0;
+  }
+
+  :global(.report-heading-about dd *:last-child) {
+    margin-bottom: 0;
   }
 
   :global(.report-heading-scope dd *:first-child) {
@@ -41,25 +48,25 @@
   import { getContext } from 'svelte';
   import marked from 'marked';
 
-  const { scopeStore, summaryStore, translate } = getContext('app');  
-  
+  const { scopeStore, summaryStore, translate } = getContext('app');
+
   export let field;
   export let multiline = false;
   export let editing;
   export let store;
 
-  $: storeToUse = getStore(store); 
-  
+  $: storeToUse = getStore(store);
+
   function getStore(store) {
-    if (store === "scopeStore") {
-      return $scopeStore
+    if (store === 'scopeStore') {
+      return $scopeStore;
     }
-    if (store === "summaryStore") {
-      return $summaryStore
+    if (store === 'summaryStore') {
+      return $summaryStore;
     }
   }
 
   $: TRANSLATED = {
-    LABEL_NOT_PROVIDED: $translate('UI.REPORT.LABEL_NOT_PROVIDED'),
+    LABEL_NOT_PROVIDED: $translate('UI.REPORT.LABEL_NOT_PROVIDED')
   };
 </script>

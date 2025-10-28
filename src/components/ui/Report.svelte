@@ -4,7 +4,7 @@
  * -->
 <div tabindex="-1" bind:this="{sectionAbout}">
   <h2>{TRANSLATED.HEADING_ABOUT}</h2>
-  <dl>
+  <dl class="report-heading-about">
     <dt>
       <ReportHeaderKey editing="{editAbout}" field="EVALUATION_CREATOR">
         {TRANSLATED.LABEL_EVALUATOR}
