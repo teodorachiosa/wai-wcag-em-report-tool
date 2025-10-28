@@ -11,7 +11,9 @@
  * Important here is to pass the correct result,
  * so test AND subject should always match.
  * -->
-<fieldset class="Criterion__Result">
+<fieldset
+  class="Criterion__Result {_assertion.result.outcome.id.split(':')[1]}"
+>
   <legend class="Criterion__Subject">
     {#if label}
       {label}
@@ -45,9 +47,35 @@
 
 <style>
   .Criterion__Result {
-    display: block;
+    display: flex;
+    flex-direction: column;
     border: none;
     margin: 1em 0 0;
+    border-radius: 1px;
+  }
+
+  .Criterion__Result.passed {
+    background-color: var(--passed);
+    box-shadow: 0 0 0 8px var(--passed);
+  }
+
+  .Criterion__Result.failed {
+    background-color: var(--failed);
+    box-shadow: 0 0 0 8px var(--failed);
+  }
+
+  .Criterion__Result.cantTell {
+    background-color: var(--cannot-tell);
+    box-shadow: 0 0 0 8px var(--cannot-tell);
+  }
+
+  .Criterion__Result.inapplicable  {
+    background-color: var(--not-present);
+    box-shadow: 0 0 0 8px var(--not-present);
+  }
+
+  .Criterion__Result legend {
+    float: left;
   }
 
   .Criterion__Subject {

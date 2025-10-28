@@ -29,6 +29,12 @@
   --dk-blue: light-dark(rgb(0, 0, 0), rgb(190, 190, 190));
   --info-box: color-mix(in hsl, var(--base-color), var(--mix-color) 92%);
   accent-color: var(--base-color);
+
+  --passed: rgb(243, 255, 237);
+  --failed: rgb(255, 240, 243);
+  --cannot-tell: rgb(255, 254, 242);
+  --not-present: rgb(249, 249, 249);
+
 }
 
 * {
