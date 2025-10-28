@@ -260,6 +260,8 @@
   }
   dt:after {
     content: ':';
+    position: absolute;
+    color: inherit;
   }
   dd {
     margin-left: 0;
@@ -271,7 +273,7 @@
     dl {
       display: grid;
       grid-template-columns: auto 2fr;
-      gap: 0.5em 1em;
+      gap: 1.3rem 1em;
     }
     dd {
       margin-bottom: 0;
