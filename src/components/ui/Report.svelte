@@ -225,7 +225,7 @@
 
 <h2>{TRANSLATED.LABEL_TECH}</h2>
 {#if report.tech != ''}
-  <p>{report.tech}</p>
+  <p>{report.tech.join(', ')}</p>
 {:else}
   <p>{TRANSLATED.LABEL_NOT_PROVIDED}</p>
 {/if}
