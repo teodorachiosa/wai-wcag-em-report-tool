@@ -30,11 +30,15 @@
   --info-box: color-mix(in hsl, var(--base-color), var(--mix-color) 92%);
   accent-color: var(--base-color);
 
-  --passed: rgb(243, 255, 237);
-  --failed: rgb(255, 240, 243);
-  --cannot-tell: rgb(255, 254, 242);
-  --not-present: rgb(249, 249, 249);
+  --passed: 130, 220, 130;
+  --failed: 255, 70, 140;
+  --cannot-tell: 255, 239, 60;
+  --not-present: 138, 138, 138;
+}
 
+.visuallyhidden {
+  background-color: var(--pure-white);
+  color: var(--off-black);
 }
 
 * {
@@ -132,6 +136,7 @@ pre {
     background-color: var(--pure-white);
     box-shadow: 0 0 0.2rem 0.2rem var(--pure-white);
     padding-top: 0.4rem;
+    z-index: 2;
   }
 
   .Auditor__Filter {
