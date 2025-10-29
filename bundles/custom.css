@@ -8,6 +8,7 @@
   /* ====== Rest of the code: ========= */
   --mix-color: light-dark(white, rgb(5, 5, 5));
   --pure-white: light-dark(white, black);
+  --invert-pure-white: light-dark(black, white);
   --off-white: light-dark(rgb(230, 230, 230), rgb(10, 10, 10));
   --dk-grey: light-dark(rgb(10, 10, 10), rgb(200, 200, 200));
   --bg: color-mix(in hsl, var(--base-color), var(--mix-color) 100%);
@@ -30,10 +31,10 @@
   --info-box: color-mix(in hsl, var(--base-color), var(--mix-color) 92%);
   accent-color: var(--base-color);
 
-  --passed: 130, 220, 130;
-  --failed: 255, 70, 140;
-  --cannot-tell: 255, 239, 60;
-  --not-present: 160, 160, 160;
+  --passed: 27, 172, 58;
+  --failed: 255, 36, 58;
+  --cannot-tell: 255, 97, 0;
+  --not-present: 130, 130, 130;
 }
 
 .visuallyhidden {
