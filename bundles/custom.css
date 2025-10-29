@@ -81,6 +81,13 @@ pre {
 }
 .tool-header {
   padding: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+@media (min-width: 60rem) {
+  .tool-header {
+    flex-direction: row;
+  }
 }
 .tool-header-logo {
   display: none;
