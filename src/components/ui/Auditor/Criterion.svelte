@@ -116,7 +116,7 @@
     top: 0;
     bottom: 0;
     width: 4px;
-    background-color: color-mix(in hsl, rgba(var(--status), 1), var(--invert-pure-white) 15%);
+    background-color: color-mix(in hsl, rgba(var(--status), 1), var(--invert-pure-white) 10%);
     left: 0;
   }
 
