@@ -52,17 +52,8 @@
     flex-direction: column;
     border: none;
     margin: 1em 0 0;
+    --status: var(--pure-white);
   }
-
-  .Criterion__Result::after {
-    content: '';
-    position: absolute;
-    left: -16px;
-    width: 8px;
-    height: calc(100% + 16px);
-    background-color: rgba(var(--status), 0.4);
-  }
-
   .Criterion__Result.passed {
     --status: var(--passed);
   }

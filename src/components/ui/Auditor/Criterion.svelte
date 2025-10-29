@@ -75,7 +75,7 @@
   />
 
   {#if $allSamples.length > 0 && $auditSamples.length > 0}
-  <details open>
+  <details open class="expand-pages">
     <summary><h4>{TRANSLATED.SAMPLE_RESULTS_DETAILS_BUTTON}</h4></summary>
     <!--
      * Sample results should be generated from
@@ -104,21 +104,55 @@
 <!-- /component -->
 
 <style>  
-.criterion {
-  margin-bottom: 1em;
-}
-:global(.criterion:target) {
-  outline: 2px solid var(--gold);
-}
-.criterion-details {
-  padding-left: 0;
-}
-.criterion-details-button {
-  margin: .5em 0 1.5em;
-}
-.criterion__resource-links {
-  margin: .5em 0;
-}
+  .criterion {
+    position: relative;
+    margin-bottom: 1em;
+  }
+
+  .criterion::after,
+  :global(details.expand-pages .Criterion__Fields::after) {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: rgba(var(--status), 0.6);
+    left: 0;
+  }
+
+  :global(details.expand-pages .Criterion__Fields::after) {
+    left: -24px;
+    border-radius: 4px;
+  }
+
+  .criterion:has(> .passed) {
+    --status: var(--passed);
+  }
+
+  .criterion:has(> .failed) {
+    --status: var(--failed);
+  }
+
+  .criterion:has(> .cantTell) {
+    --status: var(--cannot-tell);
+  }
+
+  .criterion:has(> .inapplicable) {
+    --status: var(--not-present);
+  }
+
+  :global(.criterion:target) {
+    outline: 2px solid var(--gold);
+  }
+  .criterion-details {
+    padding-left: 0;
+  }
+  .criterion-details-button {
+    margin: 0.5em 0 1.5em;
+  }
+  .criterion__resource-links {
+    margin: 0.5em 0;
+  }
 </style>
 
 <script>
