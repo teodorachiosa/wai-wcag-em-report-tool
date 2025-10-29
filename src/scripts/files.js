@@ -49,6 +49,8 @@ export function downloadFileHTML({ contents, name = 'download.txt', type = 'text
   td:not([class]):last-child {
     padding: 0 1em;
   }
+  dd *:first-child {margin-top: 0;}
+  dd *:last-child {margin-bottom: 0;}
   `);
   styleEl.appendChild(styleElContents);
   htmlDocument.head.append(styleEl);
