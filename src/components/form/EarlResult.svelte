@@ -47,31 +47,36 @@
 
 <style>
   .Criterion__Result {
+    position: relative;
     display: flex;
     flex-direction: column;
     border: none;
     margin: 1em 0 0;
-    border-radius: 1px;
+  }
+
+  .Criterion__Result::after {
+    content: '';
+    position: absolute;
+    left: -16px;
+    width: 8px;
+    height: calc(100% + 16px);
+    background-color: rgba(var(--status), 0.4);
   }
 
   .Criterion__Result.passed {
-    background-color: var(--passed);
-    box-shadow: 0 0 0 8px var(--passed);
+    --status: var(--passed);
   }
 
   .Criterion__Result.failed {
-    background-color: var(--failed);
-    box-shadow: 0 0 0 8px var(--failed);
+    --status: var(--failed);
   }
 
   .Criterion__Result.cantTell {
-    background-color: var(--cannot-tell);
-    box-shadow: 0 0 0 8px var(--cannot-tell);
+    --status: var(--cannot-tell);
   }
 
-  .Criterion__Result.inapplicable  {
-    background-color: var(--not-present);
-    box-shadow: 0 0 0 8px var(--not-present);
+  .Criterion__Result.inapplicable {
+    --status: var(--not-present);
   }
 
   .Criterion__Result legend {
