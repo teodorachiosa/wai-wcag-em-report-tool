@@ -33,7 +33,7 @@
   --passed: 130, 220, 130;
   --failed: 255, 70, 140;
   --cannot-tell: 255, 239, 60;
-  --not-present: 138, 138, 138;
+  --not-present: 160, 160, 160;
 }
 
 .visuallyhidden {
