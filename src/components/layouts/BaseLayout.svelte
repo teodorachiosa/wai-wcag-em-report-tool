@@ -8,6 +8,7 @@
     <div class="tool-header">
       <div class="tool-header-name">
         WCAG-EM R<span class="display-phablet">eport </span>T<span class="display-phablet">ool</span>
+        <span class="subtitle">(Teodora Chiosa version)</span>
       </div>
       <div class="tool-header-logo">
         <a href="http://w3.org/"><img
@@ -94,6 +95,9 @@
     .BaseLayout {
       padding: 2em 0;
     }
+  }
+  .subtitle {
+    font-size: 0.8rem;
   }
 </style>
 
