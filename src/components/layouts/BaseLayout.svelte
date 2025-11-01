@@ -8,7 +8,10 @@
     <div class="tool-header">
       <div class="tool-header-name">
         WCAG-EM R<span class="display-phablet">eport </span>T<span class="display-phablet">ool</span>
-        <span class="subtitle">(Teodora Chiosa version)</span>
+        <span class="subtitle">(<a
+            href="https://github.com/teodorachiosa/wai-wcag-em-report-tool/"
+            target="_blank"
+          >Teodora Chiosa<span class="visually-hidden">(opens new tab)</span></a> version)</span>
       </div>
       <div class="tool-header-logo">
         <a href="http://w3.org/"><img
@@ -97,7 +100,14 @@
     }
   }
   .subtitle {
-    font-size: 0.8rem;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.9rem;
+  }
+
+  .subtitle a {
+    text-decoration: underline;
+    text-underline-offset: 1px;
   }
 </style>
 
@@ -133,7 +143,10 @@
     const defaultColor = savedColorCookie ?? '#011265';
 
     if (savedColorCookie) {
-      document.documentElement.style.setProperty('--base-color', savedColorCookie);
+      document.documentElement.style.setProperty(
+        '--base-color',
+        savedColorCookie
+      );
     }
 
     return defaultColor;
