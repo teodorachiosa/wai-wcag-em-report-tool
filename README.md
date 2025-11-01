@@ -1,4 +1,6 @@
-<img width="1899" height="1079" alt="A screenshot of the WCAG Report Tool, as modified by this fork. More details about the changes can be found in the list below." src="https://github.com/user-attachments/assets/1d47ed85-3ecc-495d-96af-e97a0f4e4c73" />
+<img width="1899" height="1079" alt="A screenshot of WCAG Report Tool in light mode, as modified by this fork. More details about the changes can be found in the list below." src="https://github.com/user-attachments/assets/1d47ed85-3ecc-495d-96af-e97a0f4e4c73" />
+<img width="1897" height="1079" alt="A screenshot of WCAG Report Tool in dark mode, as modified by this fork. More details about the changes can be found in the list below." src="https://github.com/user-attachments/assets/5d12f058-fbe1-489e-96a9-85d5fe030086" />
+
 
 # WCAG-EM Report Tool (Modified)
 
