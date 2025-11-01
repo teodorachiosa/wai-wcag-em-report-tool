@@ -1,3 +1,5 @@
+<img width="1899" height="1079" alt="A screenshot of the WCAG Report Tool, as modified by this fork. More details about the changes can be found in the list below." src="https://github.com/user-attachments/assets/1d47ed85-3ecc-495d-96af-e97a0f4e4c73" />
+
 # WCAG-EM Report Tool (Modified)
 
 Fork of: [w3c/wai-wcag-em-report-tool](https://github.com/w3c/wai-wcag-em-report-tool)
