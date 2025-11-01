@@ -1,0 +1,112 @@
+
+:root {
+  --base-color: #004caf;
+  --font-family: sans-serif;
+  --font-family-code: monospace;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+
+body {
+  font-family: var(--font-family) !important;
+  padding: 2rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+a {
+  color: var(--base-color);
+}
+
+code,
+pre {
+  font-family: var(--font-family-code) !important;
+  background-color: rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  padding: 0 2px;
+  font-size: 0.9em;
+}
+
+table {
+  /* W3C Overwrite! */
+  td:last-child {
+    padding: 1em !important;
+    vertical-align: top !important;
+    text-align: left !important;
+  }
+
+  th[scope='col'] {
+    background-color: rgb(242, 242, 242);
+    position: sticky;
+    top: 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border: 1px solid grey;
+    }
+  }
+
+  td {
+    &:first-child {
+      width: 20%;
+    }
+
+    &:nth-child(2) {
+      width: 20%;
+    }
+
+    &:last-child {
+      width: 60%;
+    }
+
+    > *:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+dl {
+  dt {
+    font-weight: 700;
+  }
+
+  dd {
+    *:first-child {
+      margin-top: 0;
+    }
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+h1,
+h2 {
+  color: var(--base-color);
+}
+
+h5,
+h6 {
+  font-size: 1rem;
+}
+
+h6 {
+  margin-bottom: 0;
+}
+
+ul,
+ol {
+  margin-top: 0;
+}

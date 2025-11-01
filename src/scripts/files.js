@@ -59,7 +59,7 @@ export function downloadFileHTML({ contents, name = 'download.txt', type = 'text
 
   let customStyleElContents = '';
 
-  fetch('/bundles/report_template.css')
+  fetch('__BASEPATH__/bundles/report_template.css')
     .then((response) => {
       return response.text();
     })
