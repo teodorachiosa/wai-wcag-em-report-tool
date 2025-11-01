@@ -15,3 +15,4 @@ Live demo: [teodorachiosa.github.io/wai-wcag-em-report-tool](https://teodorachio
 - The styles are refactored to use [layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) for easier customization
 - Added markdown support in report header fields (e.g. "Scope of the Evaluation" section)
 - Color coded the outcome selection (Passed, Failed etc.)
+- Custom CSS can be added to the final downloaded report by adding a "report_template.css" file in the path: "src/static/css/report_template".

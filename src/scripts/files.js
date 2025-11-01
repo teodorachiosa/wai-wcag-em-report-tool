@@ -3,10 +3,9 @@ export function downloadFileHTML({ contents, name = 'download.txt', type = 'text
 
   const htmlDocument = document.implementation.createHTMLDocument(name);
   htmlDocument.body.innerHTML = contents.innerHTML;
-  let file;
 
   // set charset
-  meta = document.createElement("meta");
+  const meta = document.createElement("meta");
   meta.setAttribute("charset", "utf-8");
   htmlDocument.head.appendChild(meta);
 
@@ -55,18 +54,43 @@ export function downloadFileHTML({ contents, name = 'download.txt', type = 'text
   styleEl.appendChild(styleElContents);
   htmlDocument.head.append(styleEl);
 
-  file = new Blob(
-    [`<!doctype HTML>${htmlDocument.documentElement.outerHTML}`],
-    {
-      type: "text/html",
-    }
-  );
+  // add more custom CSS
+  const customStyleEl = document.createElement('style');
 
-  _a.href = URL.createObjectURL(file);
+  let customStyleElContents = '';
 
-  _a.download = name;
+  fetch('/bundles/report_template.css')
+    .then((response) => {
+      return response.text();
+    })
+    .then((data) => {
+      customStyleElContents = data;
 
-  _a.click();
+      if (customStyleElContents) {
+        customStyleEl.appendChild(document.createTextNode(customStyleElContents));
+        htmlDocument.head.append(customStyleEl);
+      }
+    })
+    .catch((error) => {
+      console.log(
+        'No custom report styles were found.',
+        error
+      );
+    })
+    .finally(() => {
+      const file = new Blob(
+        [`<!doctype HTML>${htmlDocument.documentElement.outerHTML}`],
+        {
+          type: 'text/html'
+        }
+      );
+
+      _a.href = URL.createObjectURL(file);
+
+      _a.download = name;
+
+      _a.click();
+    });
 }
 
 export function downloadFileJSON({ contents, name = 'download.txt', type = 'text/plain' }) {

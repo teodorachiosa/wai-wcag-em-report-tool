@@ -231,9 +231,11 @@
 {/if}
 
 <h2>{TRANSLATED.HEADING_SPECIFICS}</h2>
-<p>
-  {@html marked(report.specifics) || TRANSLATED.LABEL_NOT_PROVIDED}
-</p>
+{#if report.specifics != ''}
+   {@html marked(report.specifics)}
+{:else}
+  <p>{TRANSLATED.LABEL_NOT_PROVIDED}</p>
+{/if}
 
 <h2 class="strip">{TRANSLATED.HEADING_RESOURCES}</h2>
 <ul class="strip">

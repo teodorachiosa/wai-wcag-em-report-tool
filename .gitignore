@@ -11,3 +11,7 @@ build
 # Files prefixed with `_` are ignored by default.
 translations_*.json
 package-lock.json
+
+# template
+src/static/css/report_template/*
+src/static/html/report_template/*

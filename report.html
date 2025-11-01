@@ -1,0 +1,539 @@
+<!doctype HTML><html lang="en"><head><title>key2financien-key2finance-greenify-report.html</title><meta charset="utf-8"><style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  table,
+  td,
+  th {
+    border: 1px solid #3b3b3b;
+  }
+  td:not(:last-child),
+  th {
+    padding: 1em;
+    vertical-align: top;
+    text-align: left;
+  }
+  td:not([class]):last-child {
+    padding: 0 1em;
+  }
+  dd *:first-child {margin-top: 0;}
+  dd *:last-child {margin-bottom: 0;}
+  </style><style>@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+:root {
+  --base-color: #4b1ec7;
+  --font-family: 'Inclusive Sans', sans-serif;
+  --font-family-code: 'Fira Code', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+
+body {
+  font-family: var(--font-family) !important;
+  padding: 2rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+a {
+  color: var(--base-color);
+}
+
+code,
+pre {
+  font-family: var(--font-family-code) !important;
+  background-color: rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  padding: 0 2px;
+  font-size: 0.9em;
+}
+
+table {
+  /* W3C Overwrite! */
+  td:last-child {
+    padding: 1em !important;
+    vertical-align: top !important;
+    text-align: left !important;
+  }
+
+  th[scope='col'] {
+    background-color: rgb(242, 242, 242);
+    position: sticky;
+    top: 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border: 1px solid grey;
+    }
+  }
+
+  td {
+    &:last-child {
+      width: 55%;
+    }
+
+    > *:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+dl {
+  dt {
+    font-weight: 700;
+  }
+
+  dd {
+    *:first-child {
+      margin-top: 0;
+    }
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+h1,
+h2 {
+  color: var(--base-color);
+}
+
+h5,
+h6 {
+  font-size: 1rem;
+}
+
+h6 {
+  margin-bottom: 0;
+}
+
+ul,
+ol {
+  margin-top: 0;
+}
+</style></head><body><div><main data-landmark-index="1"> <h1>Evaluation Report for: Key2Financiën / Key2Finance - Greenify</h1>    <div><h2>About the Evaluation</h2> <dl><dt>Report Creator </dt><dd><p>Chiosa Teodora, Chirileac Eduard</p>
+ </dd><dt>Evaluation Commissioner </dt><dd><span>Not provided</span> </dd><dt>Evaluation date </dt><dd><p>Jul 25 2025</p>
+</dd></dl> </div> <div><h2>Executive Summary</h2> <div><p>This report refers to most modules in the Finance application, plus the start screen. </p>
+<p><strong>Note:</strong> Due to the high number of issues found and the repetitive nature of them, not all issues have been logged in this report. We trust that the development team, that knows the product and the code base, can deduce where else fixes could be applied.</p>
+<h3 id="observations">Observations</h3>
+<ul>
+<li>Older coding practices were observed, CSS styling is applied on top to make the application seem more modern. HTML best practices aren't always applied</li>
+<li>A basic level of accessibility is not achieved: <ul>
+<li><strong>Critical issues</strong>: Not all functionality is accessible via keyboard, screen reader or speech recognition. Examples: buttons that cannot be activated because they don't receive focus, form controls that cannot be filled in because they have no programmatically associated labels to describe their purpose.</li>
+</ul>
+</li>
+</ul>
+<h3 id="legal-notes">Legal notes</h3>
+<p>According to the European Accessibility Act, legacy applications can fall into 2 categories:</p>
+<ul>
+<li>applications that don't receive any updates after July 28 2025 and have until 2030 to comply with the law</li>
+<li>applications that receive updates after July 28th 2025 and must comply with the law</li>
+</ul>
+<h3 id="conclusions">Conclusions</h3>
+<ul>
+<li>Carefully consider whether the application should receive updates or not after July 2025, as this will decide the amount of work needed and the deadline for complying with the law.</li>
+<li>We recommend a rewrite of the application, preferably using the Windmill Design System (with its accessible components and its documentation on accessibility).</li>
+<li>Perform periodic automated accessibility testing, using browser tools (e.g. WAVE, ARC Toolkit, Axe Dev Tools or Access Assistant). Keep in mind that automated testing cannot cover <strong>all</strong> accessibility issues!</li>
+</ul>
+</div> </div> <div><h2>Scope of the Evaluation</h2> <dl><dt>Website name </dt><dd><p>Key2Financiën / Key2Finance - Greenify</p>
+ </dd><dt>Scope of the website </dt><dd><p>Pages defined in the sample pages of this report</p>
+ </dd><dt>WCAG Version </dt><dd>2.2 </dd><dt>Conformance target </dt><dd>AA </dd><dt>Accessibility support baseline </dt><dd><p>At least Chrome and Firefox with NVDA.</p>
+ </dd><dt>Additional evaluation requirements </dt><dd><p>The report will include accessibility issues detected by evaluators and a short remediation suggestion. The evaluators may be contacted afterwards for more technical details.</p>
+<p>Issues are problems that prevent the application from being legally compliant with the minimum requirements of the accessibility law.</p>
+<p>Warnings are other accessibility issues that users might encounter but that aren't mandatory to be fixed according to the accessibility law.</p>
+</dd></dl> </div> <h2>Detailed Audit Results</h2> <h3>Summary</h3> <p>Reported on 55 of 55 WCAG 2.2 AA 
+  Success Criteria.</p> <ul><li><span>19</span> <span>Passed</span></li><li><span>30</span> <span>Failed</span></li><li><span>0</span> <span>Cannot tell</span></li><li><span>6</span> <span>Not present</span></li><li><span>0</span> <span>Not checked</span></li></ul>  <h3>All Results</h3> <h4>1 Perceivable</h4> <h5 id="guideline-11">1.1 Text Alternatives</h5> <table aria-labelledby="guideline-11"><tbody><tr><th scope="col">Success Criterion</th> <th scope="col">Result</th> <th scope="col">Observations</th> </tr> <tr><th scope="row" id="criterion-111"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html">1.1.1: Non-text Content</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong> Image button missing alternative text</p>
+<p><strong>Fix:</strong> Image buttons provide important functionality that must be presented in alternative text. Without alternative text, the function of an image button is not made available to screen reader users or when images are disabled or unavailable.</p>
+<p><strong>The implementation is wrong, false positive issues may occur</strong></p>
+<hr>
+<p><strong>Issue:</strong>
+<code>Input</code>s with <code>type="image"</code> don't have alt text, making them hard to use by screen reader users or voice recognition users. These elements do have <code>title</code> attributes, which are announced to screen reader users, but are more difficult to use by voice recognition users. <code>Titles</code> can only be seen by sighted mouse users.</p>
+<p><strong>Fix:</strong>
+If inputs with type image <strong>must</strong> be used, add accessible names via alt text (<code>alt</code> attribute). If alt text is added, then <code>titles</code> can be removed.</p>
+<p>Another idea would be to use <code>button</code> elements and keep the <code>titles</code>, or, even better, replace <code>titles</code> with <code>aria-label</code>. Improve the user's experience by adding tooltips that can also be activated via keyboard.</p>
+<ul>
+<li>For images used in interactive elements, use functional alt text (e.g. "search" for search icons).</li>
+<li>For images showing status, describe the meaning in a few words (e.g. "parking" for the "P" icon).</li>
+</ul>
+ </td>  </tr></tbody> </table><h5 id="guideline-12">1.2 Time-based Media</h5> <table aria-labelledby="guideline-12"><tbody><tr><th scope="col">Success Criterion</th> <th scope="col">Result</th> <th scope="col">Observations</th> </tr> <tr><th scope="row" id="criterion-121"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/audio-only-and-video-only-prerecorded.html">1.2.1: Audio-only and Video-only (Prerecorded)</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Not present</p> </td> <td> </td>  </tr><tr><th scope="row" id="criterion-122"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded.html">1.2.2: Captions (Prerecorded)</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Not present</p> </td> <td> </td>  </tr><tr><th scope="row" id="criterion-123"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/audio-description-or-media-alternative-prerecorded.html">1.2.3: Audio Description or Media Alternative (Prerecorded)</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Not present</p> </td> <td> </td>  </tr><tr><th scope="row" id="criterion-124"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/captions-live.html">1.2.4: Captions (Live)</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Not present</p> </td> <td> </td>  </tr><tr><th scope="row" id="criterion-125"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/audio-description-prerecorded.html">1.2.5: Audio Description (Prerecorded)</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Not present</p> </td> <td> </td>  </tr></tbody> </table><h5 id="guideline-13">1.3 Adaptable</h5> <table aria-labelledby="guideline-13"><tbody><tr><th scope="col">Success Criterion</th> <th scope="col">Result</th> <th scope="col">Observations</th> </tr> <tr><th scope="row" id="criterion-131"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html">1.3.1: Info and Relationships</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong> Redundant title text. Title attribute text is the same as text or alternative text.</p>
+<p><strong>Fix:</strong> In most cases the title attribute can be removed, otherwise modify it to provide advisory, but not redundant information. Note that the title text may or may not be read by a screen reader and is typically inaccessible to sighted keyboard users.</p>
+<hr>
+<p><strong>Issue:</strong> Empty table header. A &lt;th&gt; (table header) contains no text.</p>
+<p><strong>Fix:</strong> If the table cell is a header, provide text within the cell that describes the column or row. If the cell is not a header or must remain empty (such as the top-left cell in a data table), make the cell a &lt;td&gt; rather than a &lt;th&gt;.</p>
+<hr>
+<p><strong>Issue:</strong>
+Error messages aren't associated with their respective inputs. Screen reader users won't hear the error message when focusing the input with errors.</p>
+<p><strong>Fix:</strong>
+Associate the error message with the input. Use <code>aria-describedby</code> on the input and reference the element containing the error text.</p>
+<hr>
+<p><strong>Issue</strong>: Some of the forms have missing form labels.</p>
+<p><strong>Fix</strong>: If a text label for a form control is visible, use the &lt;label&gt; element to associate it with its respective form control. If there is no visible label, either provide an associated label, add a descriptive title attribute to the form control, or reference the label(s) using aria-labelledby. Labels are not required for image, submit, reset, button, or hidden form controls.</p>
+<hr>
+<p><strong>Issue:</strong>
+Most inputs and labels aren't associated. Some good practices were found in radios and checkboxes.</p>
+<p>Screen reader users won't know what kind of data to fill in if they don't know what the input represents. Speech recognition users will also not be able to speak the visible label to access the inputs, because of the lack of association between inputs and visible labels.</p>
+<p><strong>Fix:</strong>
+Associate inputs with labels. Use <code>label</code> elements and the <code>for</code> attribute to reference inputs by <code>id</code>s.</p>
+ </td>  </tr><tr><th scope="row" id="criterion-132"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/meaningful-sequence.html">1.3.2: Meaningful Sequence</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Passed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Warning:</strong> Layout table. A layout table is present.</p>
+<p><strong>Fix:</strong> In almost every case, layout tables can be replaced with other HTML elements and styled with CSS to achieve the desired visual presentation. If the table contains tabular data, provide appropriate header (&lt;th&gt;) cells. If the layout table remains, verify that the reading and navigation order of table content (based on underlying source code order) is logical and give it role="presentation" to ensure it is not identified as a table to screen reader users.</p>
+<hr>
+<p><strong>Warning:</strong>
+Not a WCAG violation, but this could lead to issues in the future if used improperly: </p>
+<p>Table elements should not be used for layout or non-tabular data (example: the filter/search forms). Screen reader users reading tables from top to bottom and left to right (or right to left in other languages) could have a different experience to sighted users. This is because the order of the elements could be different. </p>
+<p><a href="https://www.w3.org/WAI/WCAG22/Techniques/failures/F49">Failure of Success Criterion 1.3.2 due to using an HTML layout table that does not make sense when linearized</a> </p>
+<p><strong>Fix:</strong>
+Use tables for tabular data only. Think of classic tables with header columns or row columns. If the data doesn't fit into this table form, use other HTML elements for layout.</p>
+ </td>  </tr><tr><th scope="row" id="criterion-133"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/sensory-characteristics.html">1.3.3: Sensory Characteristics</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Passed</p> </td> <td> </td>  </tr><tr><th scope="row" id="criterion-134"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/orientation.html">1.3.4: Orientation</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Passed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Warning:</strong>
+No responsive layouts applied. Even though the app still displays on both landscape and portrait orientation, due to the fact that the viewport isn't set accordingly and the layout isn't responsive, the app becomes unusable. </p>
+<p><strong>Fix:</strong>
+Start by <a href="https://web.dev/articles/responsive-web-design-basics#viewport">setting the right viewport</a> and then implement responsive layouts.</p>
+ </td>  </tr><tr><th scope="row" id="criterion-135"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html">1.3.5: Identify Input Purpose</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong>
+Some inputs don't have autofill options. This makes it hard for some users to fill in inputs.</p>
+<p><strong>Fix:</strong>
+Use code to indicate the purpose of common inputs, where technology allows.
+Inputs that store the user's personal information are required to have an <code>autocomplete</code> auto-fill-in option (e.g. username, password, name, email, credit card details, address fields). </p>
+ </td>  </tr></tbody> </table><h5 id="guideline-14">1.4 Distinguishable</h5> <table aria-labelledby="guideline-14"><tbody><tr><th scope="col">Success Criterion</th> <th scope="col">Result</th> <th scope="col">Observations</th> </tr> <tr><th scope="row" id="criterion-141"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html">1.4.1: Use of Color</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Passed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Warning:</strong>
+Error messages are marked with color only. For color-blind individuals, the errors aren't as evident. </p>
+<p><strong>Fix:</strong>
+Use an additional symbol or icon to signal that a certain sentence is an error message. Example: <a href="http://windmill/demo/patterns/user-authentication?tab=examples#set-new-password">Set new password - Windmill</a>.
+The input with error itself should have a visual indicator too (such as a thick red border around the input). Read more: <a href="https://www.w3.org/WAI/WCAG21/Techniques/failures/F81">Failure of Success Criterion 1.4.1 due to identifying required or error fields using color differences only</a>.</p>
+ </td>  </tr><tr><th scope="row" id="criterion-142"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/audio-control.html">1.4.2: Audio Control</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Not present</p> </td> <td> </td>  </tr><tr><th scope="row" id="criterion-143"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html">1.4.3: Contrast (Minimum)</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Passed</p> </td> <td> </td>  </tr><tr><th scope="row" id="criterion-144"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html">1.4.4: Resize text</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong>
+Similarly to the "Reflow" criterion:
+The app isn't responsive, which makes content overlap and become hard to read or use (e.g. the app header). Zooming in will result in content overlapping or disappearing.</p>
+<p><strong>Fix:</strong>
+Implement responsive design practices. Let content wrap on multiple rows instead of overlapping content. Test your application with up to 200% zoom.</p>
+ </td>  </tr><tr><th scope="row" id="criterion-145"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/images-of-text.html">1.4.5: Images of Text</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Passed</p> </td> <td> </td>  </tr><tr><th scope="row" id="criterion-1410"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/reflow.html">1.4.10: Reflow</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong> Content page is unusable at 320px viewport.</p>
+<p><strong>Fix:</strong> Make the sidenav menu an overlay instead of pushing the content.</p>
+<p>Make sure to reflow tables in a proper way, especially the sticky columns.</p>
+<hr>
+<p><strong>Issue:</strong>
+The main app header text is overflowing and overlaps other elements.</p>
+<p><strong>Fix:</strong>
+Implement the header so that text fits the container in smaller viewports.</p>
+<hr>
+<p><strong>Issue:</strong>
+The app isn't responsive, which makes content overlap and become hard to read or use (e.g. the app header contains overlapping text, the footer goes on top of app content and scrolling doesn't help show the content underneath the footer).</p>
+<p>Due to the fact that the viewport isn't set accordingly and the layout isn't responsive, the app becomes unusable. Users are forced to perform zoom gestures to be able to see and use the content well.</p>
+<p><strong>Fix:</strong>
+Start by <a href="https://web.dev/articles/responsive-web-design-basics#viewport">setting the right viewport</a> and then implement responsive layouts. Let content wrap on multiple rows instead of overlapping over other content.</p>
+ </td>  </tr><tr><th scope="row" id="criterion-1411"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html">1.4.11: Non-text Contrast</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Passed</p> </td> <td> </td>  </tr><tr><th scope="row" id="criterion-1412"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html">1.4.12: Text Spacing</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong> Main app header text is cut off and partially overlaps content page.</p>
+<p><strong>Fix:</strong> Hide or reflow text header.</p>
+<hr>
+<p><strong>Warning</strong>
+With custom spacing settings applied, the text from the tiles on the home page could go outside the tile container. Since this text is dark and the background image is also dark, the contrast makes the text hard to read.</p>
+<p><strong>Fix:</strong>
+Remove fixed heights from the tile container and add word breaking styles. </p>
+<p>Example: </p>
+<ul>
+<li>Change the <code>height</code> of the tile into a <code>min-height</code></li>
+<li>Add word breaking: <code>text-wrap: balance; word-break: break-all;</code></li>
+</ul>
+ </td>  </tr><tr><th scope="row" id="criterion-1413"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus.html">1.4.13: Content on Hover or Focus</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong>
+In "Aanvraagformulieren" module:
+Additional content appearing on tab hover cannot be dismissed.</p>
+<p><strong>Fix:</strong>
+This additional content should be dismissible (e.g. by pressing escape). The content should also appear on keyboard interaction, not just mouse interaction.
+Read more: <a href="https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus.html#:~:text=such%20as%20by%20pressing%20Escape.">https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus.html</a></p>
+ </td>  </tr></tbody> </table><h4>2 Operable</h4> <h5 id="guideline-21">2.1 Keyboard Accessible</h5> <table aria-labelledby="guideline-21"><tbody><tr><th scope="col">Success Criterion</th> <th scope="col">Result</th> <th scope="col">Observations</th> </tr> <tr><th scope="row" id="criterion-211"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html">2.1.1: Keyboard</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Factuurafhandeling</strong></p>
+<p><strong>Issue:</strong> Device dependent event handler. An event handler is present that may not be accessible.</p>
+<p><strong>Fix:</strong> Ensure that critical functionality and content is accessible by using a device independent event handler (which responds to both keyboard and mouse) or by using both a mouse dependent and a keyboard dependent event handler.</p>
+<hr>
+<p><strong>Issue:</strong>
+The functionality provided in the header of the app (e.g. home, help, logout) cannot be accessed by keyboard users or screen reader users. </p>
+<p><strong>Fix:</strong>
+Use the <code>button</code> element instead of <code>span</code>s with background images. Use a <code>select</code> element for the dropdown in the left corner.</p>
+<hr>
+<p><strong>Issue:</strong>
+Keyboard users and screen reader users can't use the Space key to check/uncheck a checkbox in a table.</p>
+<p><strong>Fix:</strong>
+Investigate why the checked state isn't retained on Space key interaction.</p>
+<hr>
+<p><strong>Issue:</strong>
+Clicking the button in the table to view an item sometimes shows an error dialog. The keyboard focus remains in the table, underneath the error dialog. Keyboard users cannot reach or close that dialog.</p>
+<p><strong>Fix:</strong>
+When a dialog appears, the user's focus should be switched to the dialog (or an element inside the dialog such as the heading or the close button). Pressing the Escape key should close the dialog if an action from the user isn't required to close it.</p>
+<p>After the user closes the dialog via keyboard, the keyboard focus should return to the element that triggered the dialog.</p>
+<hr>
+<p><strong>Issue:</strong>
+All elements that can be activated with mouse click must also receive focus and Space/Enter interaction via keyboard (this depends on the element type).</p>
+<p>The tabs component that shows additional content on hover doesn't work for keyboard users and screen reader users.</p>
+<p><strong>Fix:</strong>
+Implement an accessible tooltip behavior: </p>
+<ul>
+<li>The tooltip must be shown not only on mouse hover, but also on keyboard focus</li>
+<li>The tooltip must be dismissible via user interaction (Tabbing to a different element or pressing the Escape key)</li>
+</ul>
+<p>The tabs should also be implemented so that they're correctly announced to screen reader users. <a href="https://www.w3.org/WAI/ARIA/apg/patterns/tabs/"> Tabs Pattern | APG | WAI | W3C</a>.</p>
+<hr>
+<p><strong>Issue:</strong>
+The keyboard focus isn't maintained when performing actions in the app. </p>
+<p>Example: In "Factuurafhandeling", choosing to sort a column via keyboard moves the keyboard focus a few stops back, in a form input, instead of remaining on the sort trigger inside the table header.</p>
+<p><strong>Fix:</strong>
+Maintain focus on the element that triggers the column sort.</p>
+<hr>
+<p><strong>Warning:</strong>
+In "Factuurafhandeling", when opening the "Selecteren Kredietbeheerders" popup, Keyboard users and screen reader users might be confused by the fact that focus can move behind the popup, in the links in the header.</p>
+<p><strong>Fix:</strong>
+Implement focus trapping for the popup.</p>
+<hr>
+<p><strong>Issue:</strong>
+The button titled "Selecteren kredietbeheerder" cannot be activated by keyboard users via Enter key.</p>
+<p><strong>Fix:</strong>
+Investigate issue for input type image or use a <code>button</code> element with click events. Click events handle keyboard events too by default.</p>
+<hr>
+<p><strong>Issue:</strong>
+In "Aanvraagformulieren", "Inkoop" and similar modules, the left side menu cannot be accessed by keyboard users and screen reader users. The menu toggle also cannot be accessed by these users.</p>
+<p><strong>Fix:</strong>
+Do not use <code>div</code> elements for interactive purposes. Use buttons for actions (e.g. revealing/hiding nested menu items) and links for navigating to new pages.</p>
+<hr>
+<p><strong>Issue:</strong>
+In "Kredietbewaking", when opening the "Gegevens filteren op basis van ingestelde filterwaarde..." popup via keyboard, the focus remains underneath the popup. Keyboard users and screen reader users don't have access to this popup.</p>
+<p><strong>Fix:</strong>
+Implement focus management for keyboard and screen reader users.
+When a popup appears that users need to get to in order to complete a flow, move the focus to that popup. After the popup is closed, restore the focus to the popup trigger (the button that opened it).</p>
+<hr>
+<p><strong>Issue:</strong>
+In the "ProjectBeheersing" module, the search button isn't reachable by keyboard.</p>
+<p><strong>Fix:</strong>
+Remove <code>tabindex="-1"</code> from the search element (input type image).</p>
+ </td>  </tr><tr><th scope="row" id="criterion-212"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/no-keyboard-trap.html">2.1.2: No Keyboard Trap</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Passed</p> </td> <td> </td>  </tr><tr><th scope="row" id="criterion-214"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/character-key-shortcuts.html">2.1.4: Character Key Shortcuts</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong>
+The "Enter" key acts as a single key shortcut that searches in pages. This can prevent other keyboard interactions on enter (e.g. opening a select element on Chrome or triggering a button with Enter).</p>
+<p><strong>Fix:</strong></p>
+<ul>
+<li>Either add a keyboard shortcut with at least 2 keys </li>
+<li>Or remove the single key shortcut and enable the Enter interaction in forms by using the <code>form</code> element with a button or an input type <code>submit</code>. Example: <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_form_submit">HTML Forms - W3Schools</a></li>
+</ul>
+ </td>  </tr></tbody> </table><h5 id="guideline-22">2.2 Enough Time</h5> <table aria-labelledby="guideline-22"><tbody><tr><th scope="col">Success Criterion</th> <th scope="col">Result</th> <th scope="col">Observations</th> </tr> <tr><th scope="row" id="criterion-221"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/timing-adjustable.html">2.2.1: Timing Adjustable</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong>
+The session timeout isn't announced to users. Users are being logged off without any feedback that this has happened. </p>
+<p>This can make it seem like the app isn't working anymore (continuous loading state while triggering actions). Only after a page refresh, users are greeted with the login screen.</p>
+<p><strong>Fix:</strong>
+Give users enough time to decide if they want to continue their session or not. Give users feedback if their session has already expired.</p>
+<p>Users should be able to turn off, extend or adjust the timeout.</p>
+ </td>  </tr><tr><th scope="row" id="criterion-222"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html">2.2.2: Pause, Stop, Hide</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Passed</p> </td> <td> </td>  </tr></tbody> </table><h5 id="guideline-23">2.3 Seizures and Physical Reactions</h5> <table aria-labelledby="guideline-23"><tbody><tr><th scope="col">Success Criterion</th> <th scope="col">Result</th> <th scope="col">Observations</th> </tr> <tr><th scope="row" id="criterion-231"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html">2.3.1: Three Flashes or Below Threshold</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Passed</p> </td> <td> </td>  </tr></tbody> </table><h5 id="guideline-24">2.4 Navigable</h5> <table aria-labelledby="guideline-24"><tbody><tr><th scope="col">Success Criterion</th> <th scope="col">Result</th> <th scope="col">Observations</th> </tr> <tr><th scope="row" id="criterion-241"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/bypass-blocks.html">2.4.1: Bypass Blocks</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Factuurafhandeling</strong> </p>
+<p><strong>Issue:</strong> No page regions. No page regions or ARIA landmarks were found.</p>
+<p><strong>Fix:</strong> If the page has visual regions or significant page areas, ensure the regions are defined with header, nav, main, footer, etc. elements.</p>
+<hr>
+<p><strong>Issue:</strong>
+Keyboard only users can't quickly skip over repetitive content such as the header or the side menu. Adding landmarks and headings would be useful for screen reader users, but keyboard users can't use headings or landmarks to jump to sections of content. That's why skip links are necessary.</p>
+<p><strong>Fix:</strong></p>
+<ul>
+<li>Add a "skip to main content" link as the first focusable element in the page, that enables users to quickly jump to the <code>main</code> landmark.</li>
+<li>Add a skip link for anything keyboard users or screen reader users might want to reach faster: e.g. add a "Skip to results" link that skips over the filter/search panel and focuses the table with the data/results.</li>
+<li>Use landmarks to mark main sections of the app: <code>header</code>, <code>nav</code>, <code>main</code>, <code>footer</code>.</li>
+<li>Use headings to divide your content. Screen reader users can easily skip to headings.</li>
+</ul>
+ </td>  </tr><tr><th scope="row" id="criterion-242"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/page-titled.html">2.4.2: Page Titled</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong>
+The title of the website doesn't reflect the current page, it only mentions the module. This can confuse users.</p>
+<p><strong>Fix:</strong>
+Add a descriptive title for each page that accurately represents the name of the page and the app. Add this as a <code>title</code> element inside the <code>head</code> element. </p>
+<p>Examples:</p>
+<ul>
+<li>All invoices - Invoices - Centric Finance</li>
+<li>Test invoice 123 - Invoices - Centric Finance</li>
+<li>Raadplegen bestellingen - Inkoop - Centric Finance</li>
+</ul>
+<p>These titles show up in the user's browser as the tab title and also in bookmarks when a page is saved to bookmarks.</p>
+ </td>  </tr><tr><th scope="row" id="criterion-243"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html">2.4.3: Focus Order</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Factuurafhandeling</strong></p>
+<p><strong>Issue:</strong> Tabindex. A positive tabindex value is present.</p>
+<p><strong>Fix:</strong> If the natural tab order is already logical, remove the tabindex. Otherwise, consider restructuring the page so that tabindex is not needed. If tabindex is maintained, ensure that the resulting navigation is logical and complete.</p>
+<hr>
+<p><strong>Issue:</strong>
+Focus order doesn't always match the visually expected order. This can cause confusion, especially for sighted keyboard users.</p>
+<p><strong>Fix:</strong>
+Do not use positive values for tabindex if there's no legitimate reason for it. Positive tabindexes change the order in which elements receive focus. When this order is badly managed (e.g. forgetting to add a tabindex or adding the wrong number value) users will experience elements getting focused in the wrong order compared to the visual order.</p>
+<hr>
+<p><strong>Issue:</strong>
+In "BewakingInvordering", "Brieven" page, after going to one of the items in the table, the keyboard focus is out of order.</p>
+<p><strong>Fix:</strong>
+Remove tabindex values. Do not use positive tabindex values.</p>
+<hr>
+<p><strong>Note:</strong></p>
+<ul>
+<li><p>Avoid adding <code>tabindex="0"</code> to already interactive elements (button, input, link/anchor etc.).</p>
+</li>
+<li><p>Do not use a negative value for tabindex without supplying the JavaScript code that eventually turns that negative tabindex to a zero value. Negative tabindex prevents keyboard users from focusing elements.</p>
+</li>
+<li><p>Do not use positive values for tabindex without a legitimate reason. Positive tabindexes, when used improperly, change the order in which elements receive focus, causing confusion for users.</p>
+</li>
+</ul>
+<hr>
+<p><strong>Warning:</strong>
+Filling in a form is difficult with the current focus order. Users have to go through an entire form, reach the end of it, and then scroll back up to find a Save or Submit button. This is difficult especially for keyboard users, screen reader users and mobile users.</p>
+<p><strong>Fix:</strong>
+Add submit button after forms (in the DOM order).</p>
+ </td>  </tr><tr><th scope="row" id="criterion-244"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context.html">2.4.4: Link Purpose (In Context)</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong> Empty link. A link contains no text.</p>
+<p><strong>Fix:</strong> Remove the empty link or provide text within the link that describes the functionality and/or target of that link.</p>
+<hr>
+<p><strong>Issue:</strong>
+Some links don't provide context hints for screen reader users. The "Nieuw" link could belong to "Nota", "Periodieke nota" or "Memoriaal" or another panel.</p>
+<p>Example: The "Aanvraagformulieren" module links.</p>
+<p><strong>Fix:</strong>
+Programmatically associate the table containing links with the title of the panel. Ideally use tables only for tabular data, where a table header makes sense to use.
+E.g. Give the element with the text "Nota" an unique <code>id</code>, and then name the table in the "Nota" panel by using <code>aria-labelledby</code> and the <code>id</code> we just created. Do the same thing for all panels.</p>
+<p><strong>Note:</strong>
+Most links are contained in tables with table headers, which is good. Even if the links don't have their purpose described in the accessible name, they pass level AA due to this technique: <a href="https://www.w3.org/WAI/WCAG22/Techniques/html/H79">Identifying the purpose of a link in a data table using the link text combined with its enclosing table cell and associated table header cells</a> - the table header is mentioned.</p>
+ </td>  </tr><tr><th scope="row" id="criterion-245"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/multiple-ways.html">2.4.5: Multiple Ways</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong>
+There is only one way to reach the main navigation and it's hard to get back to the main menu with the tiles if the main tab with tiles is closed. </p>
+<p>Users unfamiliar with the app can encounter issues when looking for pages, especially when trying to find subpages in modules.</p>
+<p><strong>Fix:</strong></p>
+<ul>
+<li>Make it easier to go back to the main menu with the tiles and make it easier to switch between modules. The items in the tiles could be added to a side navigation available in all modules.</li>
+<li>Add secondary navigation options: <ul>
+<li>add a global search functionality that helps users find pages </li>
+<li>or add a sitemap page with all the pages and subpages in the entire app</li>
+</ul>
+</li>
+</ul>
+ </td>  </tr><tr><th scope="row" id="criterion-246"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/headings-and-labels.html">2.4.6: Headings and Labels</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong> No heading structure, The page has no headings.</p>
+<p><strong>Fix:</strong> Provide a clear, consistent heading structure, generally one &lt;h1&gt; and sub-headings as appropriate. Except for very simple pages, most web pages should have a heading structure.</p>
+<hr>
+<p><strong>Warning:</strong>
+For users unfamiliar with the app, it's difficult to tell what the icon buttons do (or inputs with type image in this case). Not all users can use or perceive the titles shown on mouse hover.</p>
+<p><strong>Fix:</strong>
+Besides the alt text that can be added to provide a descriptive accessible name, it would be better for all users if at least tooltips were used to show the text associated with these icons. These tooltips must be accessible by keyboard as well. The best approach would be to use links for navigating and buttons for actions, instead of input type image.</p>
+ </td>  </tr><tr><th scope="row" id="criterion-247"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html">2.4.7: Focus Visible</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong>
+There are focusable elements that do not receive visible focus via keyboard interaction. Users will come across these elements and not know where the focus is or what exactly they came across. Screen reader users are also affected.</p>
+<p><strong>Fix:</strong> 
+If the result is intentional, remove those elements from the HTML code altogether instead of removing the visible focus.</p>
+<p>Example: In the "Aanvraagformulieren", the form controls near the "Belastingnota" label are not all focusable. There's a link (<code>a</code> element) there that receives a Tab key stop, but cannot be seen.</p>
+ </td>  </tr><tr><th scope="row" id="criterion-2411"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html">2.4.11: Focus Not Obscured (Minimum)</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Passed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Warning:</strong>
+If the user is zooming into the interface, the visible focus outline can be partially  hidden under the footer element.</p>
+<p><strong>Fix:</strong>
+Fix this alongside reflow and text-resize issues. Implement responsive design to make sure the focus outline isn't completely or partially obscured.</p>
+ </td>  </tr></tbody> </table><h5 id="guideline-25">2.5 Input Modalities</h5> <table aria-labelledby="guideline-25"><tbody><tr><th scope="col">Success Criterion</th> <th scope="col">Result</th> <th scope="col">Observations</th> </tr> <tr><th scope="row" id="criterion-251"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/pointer-gestures.html">2.5.1: Pointer Gestures</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong>
+Due to the lack of responsive viewport settings and layouts, some users are forced to do pinch gestures to zoom in in order to see and use the app.</p>
+ </td>  </tr><tr><th scope="row" id="criterion-252"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/pointer-cancellation.html">2.5.2: Pointer Cancellation</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong>
+Some elements implement functionality on down events, which prevents users from cancelling their actions. </p>
+<p>For example: In the left side menu, users could accidentally click on a page and be navigated to that page. To cancel their action, user could keep holding the mouse button while moving away their cursor from the clicked element. Because of functionality being implemented on the down event in JavaScript, functionality is triggered before the user can have the chance to cancel the action.</p>
+<p><strong>Fix:</strong>
+Unless an exception applies, implement functionality on up events instead of on down events. </p>
+<p>Click events work well with click, touch, and keyboard interaction out of the box and can be cancelled by users.</p>
+ </td>  </tr><tr><th scope="row" id="criterion-253"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html">2.5.3: Label in Name</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong>
+The visual labels in close proximity to inputs cannot be used to access the input via voice recognition software. Speech recognition users that speak the name of the visible labels cannot use those inputs.</p>
+<p><strong>Fix:</strong>
+Associate the labels and inputs, e.g. by using the <code>label</code> element with the <code>for</code> attribute. Associate labels and inputs via unique <code>id</code>.</p>
+ </td>  </tr><tr><th scope="row" id="criterion-254"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/motion-actuation.html">2.5.4: Motion Actuation</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Passed</p> </td> <td> </td>  </tr><tr><th scope="row" id="criterion-257"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html">2.5.7: Dragging Movements</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Passed</p> </td> <td> </td>  </tr><tr><th scope="row" id="criterion-258"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html">2.5.8: Target Size (Minimum)</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong>
+In "UrenVerantwoording", the interactive elements aren't big enough for users to be able to accurately activate them (via mouse or touch). Users with hand tremors for example could accidentally activate the wrong functionality.</p>
+<p><strong>Fix:</strong>
+Make sure interactive elements are at least 24 by 24 pixels in size. </p>
+ </td>  </tr></tbody> </table><h4>3 Understandable</h4> <h5 id="guideline-31">3.1 Readable</h5> <table aria-labelledby="guideline-31"><tbody><tr><th scope="col">Success Criterion</th> <th scope="col">Result</th> <th scope="col">Observations</th> </tr> <tr><th scope="row" id="criterion-311"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-page.html">3.1.1: Language of Page</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue</strong>: Language invalid when app is in Dutch. Setting the language of the app to Dutch doesn't also update the lang attribute of the page.</p>
+<p><strong>Fix</strong>: Make sure the lang attribute on the html element matches the language of the application and uses a valid value.</p>
+<hr>
+<p><strong>Issue:</strong>
+The language of the page is not specified in code. This means that screen readers will not use the right language to present information to screen reader users. Users relying on translation services will also encounter issues when translating the page.</p>
+<p><strong>Fix:</strong>
+Add the proper language attribute in code: <code>&lt;html lang="nl"&gt; </code>. If the website has an English version, make sure to change the <code>lang</code> attribute to the right language as well.</p>
+<p>Note: If you'd like to test languages other than English in NVDA, you can change the Speech settings as follows: Change the "Synthesizer" to "eSpeak NG", then change the "Voice" to something other than English.</p>
+ </td>  </tr><tr><th scope="row" id="criterion-312"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts.html">3.1.2: Language of Parts</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Passed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Note:</strong>
+The text in English was assumed to be just testing data, so it was ignored during the audit.</p>
+ </td>  </tr></tbody> </table><h5 id="guideline-32">3.2 Predictable</h5> <table aria-labelledby="guideline-32"><tbody><tr><th scope="col">Success Criterion</th> <th scope="col">Result</th> <th scope="col">Observations</th> </tr> <tr><th scope="row" id="criterion-321"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/on-focus.html">3.2.1: On Focus</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Passed</p> </td> <td> </td>  </tr><tr><th scope="row" id="criterion-322"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/on-input.html">3.2.2: On Input</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong> JavaScript jump menu. A JavaScript jump menu may be present.</p>
+<p><strong>Fix:</strong> If the onchange event handler triggers a new web page, eliminate the JavaScript jump menu and allow the user to change the select menu, then activate an adjacent button to trigger the new page.</p>
+<hr>
+<p><strong>Issue:</strong>
+After login, there's a select component that appears for some users.</p>
+<p>The Escape and arrow keys used on the select trigger an unexpected page navigation. When the user moves down to a choice and either hits the escape or the tab key to move out of the select menu – the page jumps to a new screen as the focus shifts out of the dropdown menu. </p>
+<p><strong>Fix:</strong></p>
+<ul>
+<li>Don't add navigation functionality to a dropdown/select component, use links instead. </li>
+<li>Or, if navigation is added to the select component, users should be informed what to expect when interacting with this component.</li>
+</ul>
+<p>If this select isn't used in production with real users, ignore this issue.</p>
+ </td>  </tr><tr><th scope="row" id="criterion-323"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/consistent-navigation.html">3.2.3: Consistent Navigation</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue</strong>
+The left side navigation can appear or be missing from certain modules. </p>
+<p><strong>Fix</strong>
+It would be more consistent to have a global navigation available in each module.</p>
+ </td>  </tr><tr><th scope="row" id="criterion-324"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/consistent-identification.html">3.2.4: Consistent Identification</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Passed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Warning</strong>
+There are links with the same destination but different accessible names. Similar scenario: <a href="https://www.w3.org/WAI/WCAG22/Understanding/consistent-identification.html">Understanding Success Criterion 3.2.4: Consistent Identification | WAI | W3C</a> - Example number 6.</p>
+<p><strong>Fix:</strong></p>
+<ul>
+<li>Either have the same accessible name when 2 links go to the same destination, or group the 2 links together, </li>
+<li>Or, maybe more appropriate for this case, leave only one of the links in the UI and turn the other link into plain text.</li>
+</ul>
+ </td>  </tr><tr><th scope="row" id="criterion-326"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/consistent-help.html">3.2.6: Consistent Help</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong>
+Some modules don't contain the help documentation: "Urenverantwoording" and "Matching Rekeningafschriften".</p>
+<p><strong>Fix:</strong>
+Place help documentation in all modules in a consistent manner (same location in the layout).</p>
+ </td>  </tr></tbody> </table><h5 id="guideline-33">3.3 Input Assistance</h5> <table aria-labelledby="guideline-33"><tbody><tr><th scope="col">Success Criterion</th> <th scope="col">Result</th> <th scope="col">Observations</th> </tr> <tr><th scope="row" id="criterion-331"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/error-identification.html">3.3.1: Error Identification</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Note:</strong>
+Error messages can be easily identified by sighted users with no color blindness, but screen reader users can't hear the error message when the input with error is focused.</p>
+<p><strong>Fix:</strong>
+Use ARIA techniques to add descriptions to inputs that contain the error message (<code>aria-describedby</code>).</p>
+ </td>  </tr><tr><th scope="row" id="criterion-332"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html">3.3.2: Labels or Instructions</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong>
+Asterisks as a way to mark required fields might not be understood by all users.</p>
+<p><strong>Fix:</strong>
+Mention what the asterisk means before showing a form containing the asterisk symbol, e.g. "Fields marked with asterisk are required".</p>
+ </td>  </tr><tr><th scope="row" id="criterion-333"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/error-suggestion.html">3.3.3: Error Suggestion</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong> Select missing label. A select element does not have an associated label</p>
+<p><strong>Fix:</strong> Ensure that the default option of the select menu presents the purpose of the select menu. If visible label text is present, it is best to associate this text to the select menu.</p>
+<hr>
+<p><strong>Issue:</strong>
+Error messages are vague and don't help users recover from them, especially for screen reader users that don't know the name of the inputs.</p>
+<p>Example: In "Factuurafhandeling", in the search field for Year, users can type anything. They could type a string value by mistake. The error message received is "Invalid value entered".</p>
+<p><strong>Fix:</strong>
+Provide useful error messages and suggestions for fixing them:</p>
+<ul>
+<li>Optional: Provide a hint message to first prevent the user from making mistakes in the first place: Add a hint message near the input or use a <code>placeholder</code> with a year format "YYYY".</li>
+<li>Provide an error message with correction suggestions: "Please enter a valid year. Only numbers are allowed."</li>
+</ul>
+ </td>  </tr><tr><th scope="row" id="criterion-334"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/error-prevention-legal-financial-data.html">3.3.4: Error Prevention (Legal, Financial, Data)</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Passed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Note:</strong>
+A mechanism to edit/correct the information exists.</p>
+ </td>  </tr><tr><th scope="row" id="criterion-337"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/redundant-entry.html">3.3.7: Redundant Entry</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Passed</p> </td> <td> </td>  </tr><tr><th scope="row" id="criterion-338"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html">3.3.8: Accessible Authentication (Minimum)</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Passed</p> </td> <td> </td>  </tr></tbody> </table><h4>4 Robust</h4> <h5 id="guideline-41">4.1 Compatible</h5> <table aria-labelledby="guideline-41"><tbody><tr><th scope="col">Success Criterion</th> <th scope="col">Result</th> <th scope="col">Observations</th> </tr> <tr><th scope="row" id="criterion-412"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html">4.1.2: Name, Role, Value</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong>
+Form controls don't have an accessible name and they're not associated with the visible labels. This applies to most inputs in the entire application (in forms, in tables). Sometimes <code>span</code> elements are used for labels instead of the <code>label</code> element. </p>
+<p>Screen reader users don't know what the form control is for or what data to fill in. Voice recognition users can't use the visible label name to access these form controls because the labels and form controls aren't connected in code.</p>
+<p><strong>Fix:</strong>
+Provide accessible names to form controls. Associate labels and form controls together. The best way to do that is by using the <code>label</code> element together with the <code>for</code> attribute.</p>
+<hr>
+<p><strong>Warning:</strong>
+Buttons (or <code>input</code>s with <code>type="image"</code> in this case) have accessible names given by <code>title</code>s, but these are not accessible to keyboard users and can only be used by sighted mouse users.</p>
+<p><strong>Fix:</strong>
+If they can be converted to other elements, consider using the <code>button</code> element instead, and add accessible names via <code>aria-label</code>. Use keyboard accessible tooltips to give users hints about the purpose of the icons.</p>
+<hr>
+<p><strong>Issue:</strong>
+The wrong element (link) is used to provide table sorting functionality. Screen reader users will assume this element will navigate them to a new section or page. These elements will show up in screen reader user's list of links.</p>
+<p>More info: <a href="https://developer.mozilla.org/en-US/docs/Web/URI/Reference/Schemes/javascript#using_javascript_urls_as_href_targets">Using javascript: URLs as href targets</a></p>
+<p><strong>Fix:</strong></p>
+<ul>
+<li><code>button</code>: Buttons usually do actions. Exception: Submit buttons/inputs on forms also navigate.</li>
+<li><code>a</code>: Links usually navigate to a new page or a section of the same page.</li>
+</ul>
+<p>Use a button element for sorting actions. </p>
+<p>Note: Also provide hints that clicking on the column will perform sorting actions:</p>
+<ul>
+<li>for sighted users, some arrow icons would be useful</li>
+<li>for screen reader users, <code>aria-sort</code> should be used to communicate the sort status. <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-sort">ARIA: aria-sort attribute</a></li>
+</ul>
+<hr>
+<p><strong>Issue:</strong>
+In "Factuurafhandeling", when opening the "Selecteren Kredietbeheerders" popup, screen reader users don't know that the popup is a dialog and what the title of the dialog is.</p>
+<p><strong>Fix:</strong>
+Avoid using table markup for layout. Use a dialog element or the dialog role to provide semantics/meaning to screen readers. Make sure you give the dialog an accessible name: e.g. use <code>aria-labelledby</code> and reference the title of the dialog. <a href="https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/dialog/">Modal Dialog Example | APG | WAI | W3C</a>.</p>
+<hr>
+<p><strong>Issue:</strong>
+Required states can't be programmatically determined. Screen reader users are not announced that certain inputs are required. The asterisk used in the "label" is not clear/descriptive on its own and the label also isn't programmatically associated with the input.</p>
+<p><strong>Fix:</strong>
+If the asterisk character must be kept, consider adding an explanation for the asterisk notation such as a disclaimer at the beginning of forms that says: "Fields marked with asterisk are required". This message is useful to sighted users but could be hidden from screen reader users if each field is marked as required in code.
+Use <code>required</code> and <code>aria-required</code> attributes on inputs to signal to screen readers that the input is indeed required.</p>
+ </td>  </tr><tr><th scope="row" id="criterion-413"><a target="_blank" href="https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html">4.1.3: Status Messages</a> </th><td><h6>Entire sample</h6> <p><span>Result:</span> Failed</p> </td> <td><h6>Entire sample</h6> <p>Observations:</p> <p><strong>Issue:</strong>
+The error dialogs aren't announced to screen reader users.</p>
+<p><strong>Fix:</strong>
+If the user must interact with the dialog, move the focus into the dialog (on the dialog element, on the title which should be a heading).</p>
+<p>The dialog should also receive a proper role (<code>role="dialog"</code>) and also an accessible name. Adding an accessible name could be done using <code>aria-labelledby</code> by referencing the heading containing the title of the dialog.</p>
+<hr>
+<p><strong>Issue:</strong>
+In "Factuurafhandeling", when searching and after pressing Enter, the loading state isn't announced to screen reader users.</p>
+<p><strong>Fix:</strong>
+Announce loading states and UI changes that screen reader users can't be aware of due to not being able to see them. Use <code>aria-live</code> or <code>role="status"</code> to provide updates to screen readers.</p>
+ </td>  </tr></tbody> </table> <h2>Sample of Audited Web Pages</h2> <ol><li><span>Factuurhandeling (Invoice Handling)</span> - <span>https://key2fin-main.centric-dev.lan/Factuurafhandeling/</span></li><li><span>Aanvraagformulieren (Request Forms)</span> - <span>https://key2fin-main.centric-dev.lan/Aanvraagformulieren/</span></li><li><span>Kredietbewaking (Budget Monitoring)</span> - <span>https://key2fin-main.centric-dev.lan/Kredietbewaking/</span></li><li><span>Bewaking Invordering (Debt Recovery Monitoring)</span> - <span>https://key2fin-main.centric-dev.lan/BewakingInvordering/</span></li><li><span>Autoriseren Rekeningnummers (Bank Account Authorization)</span> - <span>https://key2fin-main.centric-dev.lan/AutoriserenRekeningnummer/</span></li><li><span>Inkoop (Purchasing)</span> - <span>https://key2fin-main.centric-dev.lan/Inkoop/</span></li><li><span>Projectbeheersing (Project Monitoring)</span> - <span>https://key2fin-main.centric-dev.lan/ProjectBeheersing/</span></li><li><span>Urenverantwoording (Hour Reporting)</span> - <span>https://key2fin-main.centric-dev.lan/Login.aspx?service=urenVerantwoording</span></li><li><span>Portal</span> - <span>https://key2fin-main.centric-dev.lan/Default.aspx?showOldPortal=true</span></li></ol> <h2>Web Technology</h2> <p>HTML, CSS, WAI-ARIA, JavaScript, SVG</p> <h2>Recording of Evaluation Specifics</h2> <p>Test</p>
+  </main></div></body></html>
