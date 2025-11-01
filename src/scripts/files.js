@@ -1,34 +1,41 @@
-export function downloadFileHTML({ contents, name = 'download.txt', type = 'text/plain', lang = 'en' }) {
+export function downloadFileHTML({
+  contents,
+  name = 'download.txt',
+  type = 'text/plain',
+  lang = 'en'
+}) {
   const _a = document.createElement('a');
 
   const htmlDocument = document.implementation.createHTMLDocument(name);
   htmlDocument.body.innerHTML = contents.innerHTML;
 
   // set charset
-  const meta = document.createElement("meta");
-  meta.setAttribute("charset", "utf-8");
+  const meta = document.createElement('meta');
+  meta.setAttribute('charset', 'utf-8');
   htmlDocument.head.appendChild(meta);
 
-  // set lang 
+  // set lang
   htmlDocument.documentElement.setAttribute('lang', lang);
 
   // remove certain elements
   Array.from(
-    htmlDocument.querySelectorAll("button, input, aside, footer, .Controls, #site-header, .Nav, .strip")
+    htmlDocument.querySelectorAll(
+      'button, input, aside, footer, .Controls, #site-header, .Nav, .strip'
+    )
   ).forEach((el) => {
     el.parentNode.removeChild(el);
   });
 
   // remove certain attributes
-  Array.from(
-    htmlDocument.querySelectorAll("[tabindex], [class]")
-  ).forEach((el) => {
-    el.removeAttribute("tabindex");
-    el.removeAttribute("class");
-  });
+  Array.from(htmlDocument.querySelectorAll('[tabindex], [class]')).forEach(
+    (el) => {
+      el.removeAttribute('tabindex');
+      el.removeAttribute('class');
+    }
+  );
 
-  // add CSS 
-  const styleEl = document.createElement("style");
+  // add CSS
+  const styleEl = document.createElement('style');
   const styleElContents = document.createTextNode(`
   table {
     border-collapse: collapse;
@@ -57,25 +64,26 @@ export function downloadFileHTML({ contents, name = 'download.txt', type = 'text
   // add more custom CSS
   const customStyleEl = document.createElement('style');
 
-  let customStyleElContents = '';
+  Promise.allSettled([
+    fetch('__BASEPATH__/bundles/default_report_template.css'),
+    fetch('__BASEPATH__/bundles/report_template.css')
+  ])
+    .then(async ([defaultTemplateResponse, customTemplateResponse]) => {
+      const response = await customTemplateResponse.value;
 
-  fetch('__BASEPATH__/bundles/report_template.css')
-    .then((response) => {
-      return response.text();
-    })
-    .then((data) => {
-      customStyleElContents = data;
+      if (response.headers.get('Content-Type') === 'text/css') {
+        customStyleEl.appendChild(
+          document.createTextNode(await response.text())
+        );
+        htmlDocument.head.append(customStyleEl);
+      } else {
+        const response = defaultTemplateResponse.value;
 
-      if (customStyleElContents) {
-        customStyleEl.appendChild(document.createTextNode(customStyleElContents));
+        customStyleEl.appendChild(
+          document.createTextNode(await response.text())
+        );
         htmlDocument.head.append(customStyleEl);
       }
-    })
-    .catch((error) => {
-      console.log(
-        'No custom report styles were found.',
-        error
-      );
     })
     .finally(() => {
       const file = new Blob(
@@ -93,7 +101,11 @@ export function downloadFileHTML({ contents, name = 'download.txt', type = 'text
     });
 }
 
-export function downloadFileJSON({ contents, name = 'download.txt', type = 'text/plain' }) {
+export function downloadFileJSON({
+  contents,
+  name = 'download.txt',
+  type = 'text/plain'
+}) {
   const _a = document.createElement('a');
   const file = new Blob([contents], { type });
 
