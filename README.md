@@ -9,7 +9,7 @@ Live demo: [teodorachiosa.github.io/wai-wcag-em-report-tool](https://teodorachio
 ## What's different:
 
 - Report tool theming options. To change the color, change the input labelled "Base color". Make sure you pick a contrasting color!
-- Light or dark mode. To toggle between light and dark mode, toggle the checkbox labelled "Dark mode". Make sure you pick a contrasting "Base color"!
+- Light or dark mode. To toggle between light or dark mode, toggle the checkbox labelled "Dark mode". Make sure you pick a contrasting "Base color"!
 - The report is saved to local storage on input changes in order to avoid losing progress on browser crash.
 - The report can be opened from local storage by using the button titled "Open from local storage" in the "Overview" step.
 - The success criteria in the auditor ("Audit Sample" step) is sticky - it sticks to the top of the screen.
