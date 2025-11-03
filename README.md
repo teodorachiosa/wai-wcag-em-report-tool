@@ -1,4 +1,4 @@
-[A screenshot of WCAG Report Tool, as modified by this fork. More details about the changes can be found in the list below.](https://v1.screenshot.11ty.dev/https%3A%2F%2Fteodorachiosa.github.io%2Fwai-wcag-em-report-tool%2Fevaluation%2Fview-report/opengraph/)
+![A screenshot of WCAG Report Tool, as modified by this fork. More details about the changes can be found in the list below.](https://v1.screenshot.11ty.dev/https%3A%2F%2Fteodorachiosa.github.io%2Fwai-wcag-em-report-tool%2Fevaluation%2Fview-report/opengraph/)
 
 # WCAG-EM Report Tool (Modified)
 
