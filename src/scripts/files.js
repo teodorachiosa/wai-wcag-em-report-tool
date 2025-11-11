@@ -17,6 +17,12 @@ export function downloadFileHTML({
   // set lang
   htmlDocument.documentElement.setAttribute('lang', lang);
 
+  // set mobile responsiveness
+  const viewportMeta = document.createElement('meta');
+  viewportMeta.setAttribute('name', 'viewport');
+  viewportMeta.setAttribute('content', 'width=device-width,initial-scale=1.0');
+  htmlDocument.head.appendChild(viewportMeta);
+
   // remove certain elements
   Array.from(
     htmlDocument.querySelectorAll(
@@ -30,7 +36,7 @@ export function downloadFileHTML({
   Array.from(htmlDocument.querySelectorAll('[tabindex], [class]')).forEach(
     (el) => {
       el.removeAttribute('tabindex');
-      el.removeAttribute('class');
+      // el.removeAttribute('class');
     }
   );
 
