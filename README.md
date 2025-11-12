@@ -23,3 +23,7 @@ Live demo: [teodorachiosa.github.io/wai-wcag-em-report-tool](https://teodorachio
 - The final downloaded report can have custom styles.
   - Only works for local development!
   - Create a "report_template.css" file in the "src/static/css/report_template" folder and then follow the [Local development](https://github.com/w3c/wai-wcag-em-report-tool?tab=readme-ov-file#local-development) steps to run the app.
+- The final downloaded report supports extra HTML code added in a footer element at the end of the report (can be used for credits and extra links)
+  - Only works for local development!
+  - Create a "report_template.html" file in the "src/static/html/report_template" folder and then follow the [Local development](https://github.com/w3c/wai-wcag-em-report-tool?tab=readme-ov-file#local-development) steps to run the app.
+  - Make sure you add the following comment somewhere in your report_template.html file: `<!-- custom_template -->`. This ensures it can be picked up by the method that adds extra HTML content to the report's footer element.

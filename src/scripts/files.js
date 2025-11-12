@@ -92,18 +92,30 @@ export function downloadFileHTML({
       }
     })
     .finally(() => {
-      const file = new Blob(
-        [`<!doctype HTML>${htmlDocument.documentElement.outerHTML}`],
-        {
-          type: 'text/html'
+      fetch('__BASEPATH__/bundles/report_template.html').then(async (html) => {
+        const htmlRequestResponse = await html.text();
+        const isRealTemplate = htmlRequestResponse.includes('custom_template');
+
+        if (isRealTemplate) {
+          const footer = document.createElement('footer');
+          footer.innerHTML = htmlRequestResponse;
+
+          htmlDocument.body.appendChild(footer);
         }
-      );
 
-      _a.href = URL.createObjectURL(file);
+        const file = new Blob(
+          [`<!doctype HTML>${htmlDocument.documentElement.outerHTML}`],
+          {
+            type: 'text/html'
+          }
+        );
 
-      _a.download = name;
+        _a.href = URL.createObjectURL(file);
 
-      _a.click();
+        _a.download = name;
+
+        _a.click();
+      });
     });
 }
 

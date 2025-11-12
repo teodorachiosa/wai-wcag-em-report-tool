@@ -1,4 +1,3 @@
-
 :root {
   --base-color: #0048a7;
   --font-family: sans-serif;
@@ -109,4 +108,28 @@ h6 {
 ul,
 ol {
   margin-top: 0;
+}
+
+/* Desktop exceptions */
+@media (min-width: 60em) {
+  .results-label-mobile {
+    display: none;
+  }
+}
+
+/* Mobile exceptions */
+@media not (min-width: 60em) {
+  table {
+    td,
+    th {
+      display: block;
+      width: 100% !important;
+    }
+
+    th[scope='col'] {
+      position: absolute;
+      top: -9999em;
+      left: -9999em;
+    }
+  }
 }

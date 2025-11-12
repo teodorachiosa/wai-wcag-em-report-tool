@@ -95,6 +95,11 @@ export default {
           dest: `build/bundles`
         },
         {
+          // Extra HTML templates for the report footer element
+          src: 'src/static/html/**/*.html',
+          dest: `build/bundles`
+        },
+        {
           // Images
           src: 'src/static/**/*.{svg,png,jpeg,jpg}',
           dest: `build/images`
