@@ -17,7 +17,7 @@
   --font-family-code: 'Fira Code', monospace;
   --w3c-classic: var(--base-color);
   --wai-green: var(--base-color);
-  --w3c-blue: color-mix(in hsl, var(--base-color), var(--mix-color) 20%);
+  --w3c-blue: var(--base-color);
 
   --cloudy: light-dark(rgb(200, 200, 200), rgb(50, 50, 50));
   --cloudy-subtle: light-dark(rgb(230, 230, 230), rgb(20, 20, 20));
