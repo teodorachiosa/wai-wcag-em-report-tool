@@ -15,3 +15,5 @@ package-lock.json
 # template
 src/static/css/report_template/*
 src/static/html/report_template/*
+
+.vscode
