@@ -32,7 +32,18 @@
                   {/if}
                   <p>        
                     <span class="results-label-mobile">{TRANSLATED.HEADER_RESULT}:</span>
-                    {assertion.result.outcome.title || TRANSLATED.TEXT_NOT_CHECKED}</p>
+                    {assertion.result.outcome.title || TRANSLATED.TEXT_NOT_CHECKED}
+                      {#if assertion.result.outcome.title === 'Passed'}
+                        <span aria-hidden="true">
+                          ✅
+                        </span>
+                      {/if}
+                      {#if assertion.result.outcome.title === 'Failed'}
+                        <span aria-hidden="true">
+                          ❌
+                        </span>
+                      {/if}
+                  </p>
                 {:else}
                   <p>
                     <span class="results-label-mobile">{TRANSLATED.HEADER_RESULT}:</span>
